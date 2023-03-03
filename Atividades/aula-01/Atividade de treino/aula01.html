@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/images.png">
+    <title>Aula - 01</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%;">
+
+    <br/><p/>
+    <h1 >Titulo - Aula 01</h1>
+        <p/><p/>
+        Nome: <input type="text" id="nome_input" placeholder="Entre com o Nome"><p/>
+        Idade: <input type="number" id="idade_input" placeholder="Entre com a Idade">
+        <br/><p/>
+        <button onclick="hello()" id="button_id">
+            Cumprimente-me
+        </button>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi consequuntur quisquam accusantium saepe ipsam odio porro atque corporis, fugit libero repellendus laboriosam nobis laborum natus quas ad hic corrupti!
+        </p>
+
+</body>
+</html>
+
+<script>
+    var Vidade = false;
+    var Vnome = false;
+    var Vidade2 = false;
+
+    function hello() {
+        if (idade_input.value <= 0){
+            alert(`Favor entre com uma idade valida...`);
+            Vidade = true
+        }
+        if (idade_input.value >= 120){
+            alert(`Favor entre com uma idade valida...`);
+            Vidade2 = true
+        }
+        if (nome_input.value == ``){
+            alert(`Favor entre com o seu nome...`);
+            Vnome = true
+        }
+            alert(`Olá `+nome_input.value+ ` ,você tem ` +idade_input.value+ ` anos de idade.`);
+
+    }
+
+</script>

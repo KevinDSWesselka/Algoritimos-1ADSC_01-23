@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-10</title>
+</head>
+
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    <h2>Calculadora</h2>
+    Insira um Número: <input type="number" id="inp_numero" placeholder="Entre com um numero"><br /><p/>
+    Insira mais um Número: <input type="number" id="inp_numero02" placeholder="Entre com um numero"><br /><p/>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dvidir()">Dividir </button>
+    <button onclick="subtrair()">Subtrair </button>
+    <button onclick="somar()">Somar </button><p/>
+    <div id="div_mostrar"></div><p/>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis eaque distinctio inventore, mollitia et, sed rem
+    aperiam ratione hic in nostrum suscipit voluptates doloremque deleniti a voluptate quisquam dicta ullam.
+</body>
+
+</html>
+
+<script>
+
+    function multiplicar() {
+        var numero = (Number(inp_numero.value) * Number(inp_numero02.value));
+        alert(inp_numero.value + ` multiplicado por `+ inp_numero02.value + ` é ` + (numero))
+
+        //div_mostrar.innerHTML = `O produto entre ${inp_numero.value} e ${inp_numero02.value} é ${numero}`
+    }
+
+    function dvidir() {
+        var numero = (Number(inp_numero.value) / Number(inp_numero02.value));
+        alert(inp_numero.value + ` divido por `+ inp_numero02.value + ` é ` + (numero))
+
+        //div_mostrar.innerHTML = `A razão entre ${inp_numero.value} e ${inp_numero02.value} é ${numero}`
+    }
+
+    function subtrair() {
+        var numero = (Number(inp_numero.value) - Number(inp_numero02.value));
+        alert(inp_numero.value + ` subtraido por `+ inp_numero02.value + ` é ` + (numero))
+
+        //div_mostrar.innerHTML = `A diferença entre ${inp_numero.value} e ${inp_numero02.value} é ${numero}`
+    }
+
+    function somar() {
+        var numero = (Number(inp_numero.value) + Number(inp_numero02.value));
+        alert(inp_numero.value + ` somado a `+ inp_numero02.value + ` é ` + (numero))
+
+       //div_mostrar.innerHTML = `A soma entre ${inp_numero.value} e ${inp_numero02.value} é ${numero}`
+    }
+
+    //Nessa fiquei em duvida entre fazer com os comando que foram passados em aula, ou de fazer em div's,
+    //Por via das duvidas tenho os dois caminhos
+
+    //10. Crie um programa que: 
+
+    //a) Solicite 2 números ao usuário 
+
+    //b) tenha um botão para cada operação aritmética. Ao clicar em algum deles, ==> exibir ABAIXO <== do botão UMA dessas frases: 
+
+    //-A soma entre X e Y é Z 
+
+    //- A diferença entre X e Y é Z 
+
+    //- O produto entre X e Y é Z 
+
+    //- A razão entre X e Y é Z       
+</script>

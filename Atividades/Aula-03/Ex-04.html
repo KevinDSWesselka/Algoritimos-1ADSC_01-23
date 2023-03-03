@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Time</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>PIZZA TIME!!!</h1>
+    Qual vai ser o Sabor: <input type="text" placeholder="Entre com o Sabor da Pizza" id="inp_sabor"><br/>
+    Quanto custa cada Pizza: <input type="text" placeholder="Entre com o Sabor da Pizza" id="inp_custo"><br/>
+    Quantos vão comer: <input type="text" placeholder="Entre com a quantidade de pessoas" id="inp_quantos"><p/>
+    <button onclick="validar_valor()">Ver valor por amigo</button><p/>
+    <div id="div_resultado"></div><p/><br/>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores debitis adipisci labore culpa, provident vel vitae ullam? Deserunt ab recusandae quia illo, quis laboriosam aut quasi ullam nulla amet consectetur?
+
+
+</body>
+</html>
+
+<script>
+
+    function validar_valor() {
+        var quantidade_amigos = Number(inp_quantos.value);
+        var valor_pizza = Number(inp_custo.value);
+
+        var calculo = (valor_pizza + valor_pizza/10)/quantidade_amigos;
+
+        div_resultado.innerHTML = `Cada amigo vai colaborar com R$${calculo} para a pizza de ${inp_sabor.value}.` 
+    }
+
+</script>

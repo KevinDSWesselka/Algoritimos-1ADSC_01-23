@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amin Tiroso</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Quantas Bebes?</h1>
+    Quantas latinahs bebe por dia: <input type="text" id="inp_latinhas"><br>
+    <button onclick="btn_resultado()">Quantos refris?</button><p/>
+    <div id="div_resultado"></div><p/>
+    <div id="div_resultado1"></div>
+
+</body>
+</html>
+
+<script>
+
+    function btn_resultado(){
+
+        var latinha = Number(inp_latinhas.value);
+        var ano = 365;
+        var total = (latinha * ano);
+
+        if (total > 500){
+            div_resultado.innerHTML = `Cuidado com a diabetes!`
+        }
+
+        div_resultado1.innerHTML = `Você bebe ${total} latinhas por ano!`
+
+    }
+
+</script>

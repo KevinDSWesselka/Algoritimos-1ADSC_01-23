@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Media: <input type="text" id="inp_media"><br>
+    <button onclick="but_resposta()">Ver Resposta</button><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function but_resposta(){
+        var media = Number(inp_media.value)
+
+        if (media => 6) {
+            div_resultado.innerHTML = `Você esta Aprovado!`
+        }
+
+        if (media < 6) {
+            div_resultado.innerHTML = `Você esta Reprovado!`
+        }
+    }
+
+</script>

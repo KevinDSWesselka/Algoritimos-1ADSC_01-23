@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+
+    <h1>Tabuadas</h1>
+    Escolha um numero: <input type="text" id="inp_numero"><br/>
+    <button onclick="validar_tabuda()">Ver Tabuada</button><p/>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function validar_tabuda(){
+
+        var valor = Number(inp_numero.value);
+        var calculo = `
+        ${valor} x 1 = ${valor * 1}<br/>
+        ${valor} x 2 = ${valor * 2}<br/>
+        ${valor} x 3 = ${valor * 3}<br/>
+        ${valor} x 4 = ${valor * 4}<br/>
+        ${valor} x 5 = ${valor * 5}<br/>
+        ${valor} x 6 = ${valor * 6}<br/>
+        ${valor} x 7 = ${valor * 7}<br/>
+        ${valor} x 8 = ${valor * 8}<br/>
+        ${valor} x 9 = ${valor * 9}<br/>
+        `;
+
+        div_resultado.innerHTML = calculo;
+    }
+
+</script>

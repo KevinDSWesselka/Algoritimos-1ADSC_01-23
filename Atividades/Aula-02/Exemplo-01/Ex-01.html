@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    <h2>Minha Calculadora</h2>
+    Insira um Número: <input type="number" id="inp_numero" placeholder="Entre com um numero"><br/><p/>
+    <button onclick="multiplicar()">Multiplicar por 5</button>  
+    <button onclick="dvidir()">Dividir por 5</button>  
+    <button onclick="subtrair()">Subtrair 5</button>  
+    <button onclick="somar()">Somar 5</button>  <p/>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis eaque distinctio inventore, mollitia et, sed rem aperiam ratione hic in nostrum suscipit voluptates doloremque deleniti a voluptate quisquam dicta ullam.
+</body>
+</html>
+
+<script>
+
+    function multiplicar() {
+        var numero = Number(inp_numero.value);
+        alert(inp_numero.value+ ` multiplicado por 5 é: ` +(numero*5))
+    }
+
+    function dvidir() {
+        var numero = Number(inp_numero.value);
+        alert(inp_numero.value+ ` dividido por 5 é: ` +(numero/5))
+    }
+
+    function subtrair() {
+        var numero = Number(inp_numero.value);
+        alert(inp_numero.value+ ` subtraido por 5 é: ` +(numero-5))
+    }
+
+    function somar() {
+        var numero = Number(inp_numero.value);
+        alert(inp_numero.value+ ` somado a 5 é: ` +(numero+5))
+    }
+
+</script>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Vamos ver sua Notas</h1>
+    Entre com a nota 1: <input type="text" id="inp_nota1"><br>
+    Entre com a nota 2: <input type="text" id="inp_nota2"><br>
+    Entre com a nota 3: <input type="text" id="inp_nota3"><br>
+    <button onclick="btn_analise()">Analisar desempenho</button><p/>
+    <div id="div_resultado"></div><br>
+    <div id="div_resultado1"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function btn_analise(){
+
+        var nota1 = Number(inp_nota1.value);
+        var nota2 = Number(inp_nota2.value);
+        var nota3 = Number(inp_nota3.value);
+        var media = (nota1 + nota2 + nota3) / 3;
+
+        div_resultado.innerHTML = `Sua média foi de ${media}`
+
+        if (media >= 9.4){
+            div_resultado1.innerHTML = `Parabéns, você é fora de série!`;
+        }
+
+
+    }
+
+</script>

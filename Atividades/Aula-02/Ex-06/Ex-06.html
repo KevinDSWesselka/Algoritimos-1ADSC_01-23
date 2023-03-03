@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="fetchimage.png">
+    <title>Pizza Time</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>PIZZA TIME</h1>
+    Valor da Pizza<input type="text" id="inp_valor" placeholder="Entre com o valor da Pizza"><br/>
+    Quantidade de amigos <input type="text" id="inp_amigo" placeholder="Entre com a quantidade de amigos"><br/><p/>
+    <button onclick="calcular()">#lovePizza</button><p/>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ea deleniti ipsam voluptates optio possimus repudiandae est, beatae facilis facere repellendus cum ut, assumenda sed delectus quod qui eveniet! Itaque.
+    
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+
+        alert('Cada um dos ' +inp_valor.value+ 'amigos vai pagar R$' +(Number(inp_valor.value)/ Number(inp_amigo.value)))
+
+    }
+
+</script>

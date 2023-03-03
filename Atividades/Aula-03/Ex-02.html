@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleições</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Contagem de Votos</h1>
+    Votos do Candidato 1: <input type="text" id="inp_candidato1" placeholder="Entre com os votos"><br/>
+    Votos do Candidato 2: <input type="text" id="inp_candidato2" placeholder="Entre com os votos"><br/>
+    Votos em branco: <input type="text" id="inp_brancos" placeholder="Entre com os votos"><br/>
+    Votos nulos: <input type="text" id="inp_nulos" placeholder="Entre com os votos"><p/>
+    <button onclick="resultado()">Resultado da Eleição</button>
+    <div id="div_mostrar"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado(){
+
+        var candidato1 = Number(inp_candidato1.value);
+        var candidato2 = Number(inp_candidato2.value);
+        var nulos = Number(inp_nulos.value);
+        var brancos = Number(inp_brancos.value);
+        var invalidos = nulos + brancos;
+
+        var resultado_total = candidato1 + candidato2 + nulos + brancos;
+        var resul_cand1 = `Candidato 1: ${(candidato1 * 100 )/  resultado_total}`;
+        var resul_cand2 = `Candidato 2: ${(candidato2 * 100 )/  resultado_total}`;
+        var resul_invalidos = `Invalidos: ${(invalidos * 100 )/  resultado_total}`;
+
+
+        div_mostrar.innerHTML = `
+        Total de votos: <u>${resultado_total}</u><br/>
+        ${resul_cand1}% (${candidato1} votos)<br/>
+        ${resul_cand2}% (${candidato2} votos)<br/>
+        ${resul_invalidos}% (${invalidos} votos)<br/>
+        `;
+    }
+
+</script>

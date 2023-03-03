@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTA!</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Vamos para festa?</h1>
+    Qual sua idade: <input type="text" id="inp_idade"><br>
+    <button onclick="btn_resposta()">Ir para festa</button>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, tempora dicta voluptas enim veritatis, iste deserunt adipisci voluptates consectetur aliquam accusamus rerum similique! Dolorem reprehenderit consectetur iure doloribus error! Deserunt!
+
+</body>
+</html>
+
+<script>
+
+    function btn_resposta() {
+        var idade = Number(inp_idade.value);
+
+        if (idade < 18){
+            alert(`Pedir permissão pro responsável`);
+        }
+
+        alert(`#partiufesta`);
+
+    }
+
+</script>

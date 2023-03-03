@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-09</title>
+</head>
+
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Calcular Nota</h1>
+    Nome: <input type="text" id="inp_nome" placeholder="Entre com o seu nome"><p/>
+    Nota continuada 01: <input type="text" id="inp_continuada" placeholder="Entre com a notra da continuada 1"><p/>
+    Nota semestral: <input type="text" id="inp_semestral" placeholder="Entre com a notra da semestral"><p/>
+    <button onclick="calcular()"> Calcular Media </button>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var nota1 = Number(inp_continuada.value);
+        var nota2 = Number(inp_semestral.value);
+        var media = (nota1 + nota2) / 2
+
+        alert('A média de ' + inp_nome.value + ' será de ' + media.toFixed(2))
+    }
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1> Pizza Time!</h1>
+    Quanto custa a Pizza: <input type="text" id="inp_valorP"><br/>
+    Quantos vão pagar: <input type="text" id="inp_quantAmigos"><p/>
+    <button onclick="btn_resultado()">Rola Pizza?</button><p/>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function btn_resultado(){
+        var valorP = Number(inp_valorP.value);
+        var quantAmigos = Number(inp_quantAmigos.value);
+
+        var total = (valorP / quantAmigos);
+
+        if (total > 20){
+            div_resultado.innerHTML = `Deu ruim! Pizza muito cara!`
+        }
+
+        if (total <= 20){
+            div_resultado.innerHTML = `Cada amigo vai pagar R$${total} pela pizza`
+        }
+    }
+
+</script>

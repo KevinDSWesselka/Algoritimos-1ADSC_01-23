@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Cidade e Ano</title>
+    <link rel="shortcut icon" href="/img/images.png">
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%;">
+    
+        <br/><p/>
+        <h1>Vamso ver sua idade</h1>
+        Cidade Natal: <input id="CidNatal_input" type="text" placeholder="Entre com a Cidade"><p/>
+        Ano de Nascimento <input type="datetime-local" id="AnoNasci_input" placeholder="Entre com o Ano"><br/>
+        <button onclick="Cadastrar()">Cadastrar</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi consequuntur quisquam accusantium saepe ipsam odio porro atque corporis, fugit libero repellendus laboriosam nobis laborum natus quas ad hic corrupti!
+    </p>
+    
+
+</body>
+</html>
+
+<script>
+
+    function Cadastrar(){
+        alert(`Você nasceu na cidade de `+CidNatal_input.value+` em ` +AnoNasci_input.value+ `.`)
+    }
+
+</script>
