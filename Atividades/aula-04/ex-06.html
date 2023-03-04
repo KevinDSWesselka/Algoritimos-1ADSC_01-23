@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco DSW</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Bacno DSW</h1>
+    Renda familiar: <input type="text" placeholder="Entre com a Renda familiar" id="inp_renda"><br/>
+    Valor da prestação: <input type="text" placeholder="Valor da prestação" id="inp_prestação"><br/>
+    <button onclick="btn_revificar()">Verificar financiamento"</button><p/>
+    <div id="div_resultado"></div><p/>
+    <div id="div_resultado1" style="color: red;"></div><p/><br/>
+
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias velit repellat dignissimos laborum ratione voluptatem assumenda inventore error vitae labore maiores neque numquam facilis dolorum atque fugit hic, reprehenderit non.
+
+</body>
+</html>
+
+<script>
+
+    function btn_revificar(){
+
+        var renda = Number(inp_renda.value);
+        var prestação = Number(inp_prestação.value);
+
+        var porcentual = (prestação/renda)*100
+
+
+        if (porcentual > 30){
+            div_resultado1.innerHTML = `<b>Será necessário complementar a renda familiar</b>`
+        }
+      div_resultado.innerHTML = `A prestação corresponde a ${porcentual.toFixed(2)}% da renda familiar`
+
+
+    }
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming </title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Streaming</h1>
+    Ultima serie que assitiu: <input type="text" id="imp_serie" placeholder="Entre com o nome da Serie"><p/>
+    Quantos Ep's já assistiu: <input type="text" id="inp_eps" placeholder="Entre com os episodios"><p/>
+    <button onclick="btn_verificar()">Verificar nível</button><p/><br/>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti veniam tempora, accusantium eveniet, deleniti voluptas aut quos laudantium a earum fugit, illum temporibus dicta eius saepe est animi minus neque?
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function btn_verificar(){
+        var horas = Number(inp_eps.value) * 22;
+        if (horas < 30){
+        div_resultado.innerHTML = `Vejo que você gosta da série ${imp_serie.value}`
+        }
+        if (horas > 30) {
+            div_resultado.innerHTML = `Uau, você realmente gosta dessa série!`
+        }
+    }
+</script>

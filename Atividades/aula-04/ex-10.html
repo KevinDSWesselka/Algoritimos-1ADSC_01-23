@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco DSW</title>
+</head>
+<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+    
+    <h1>Bacn DSW</h1>
+    Qual o seu saldo n banco: <input type="text" id="inp_saldo" placeholder="Entre com o seu saldo no banco"><p/><br/>
+    <button onclick="btn_verificar()">Verificar finanças</button><p/>
+    <div id="div_resultado"><br/></div><p/>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ratione delectus, eos id commodi excepturi voluptas soluta, eaque ipsa laboriosam fugit praesentium ipsum! Quis repudiandae voluptatum dicta deleniti asperiores quaerat.
+
+    
+</body>
+</html>
+
+<script>
+    function btn_verificar(){
+        var saldo = Number(inp_saldo.value).toFixed(2);
+
+        if (saldo == 0){
+            div_resultado.innerHTML = `<span style="color: balck;">Conta zerada</span>`
+        }
+        if (saldo < 0){
+            div_resultado.innerHTML = `<span style="color: red;">Esta Devendo!</span>`
+        }
+        if (saldo > 0){
+            div_resultado.innerHTML = `<span style="color: blue;">Saldo positivo! =D</span>`
+        }
+    }
+</script>
