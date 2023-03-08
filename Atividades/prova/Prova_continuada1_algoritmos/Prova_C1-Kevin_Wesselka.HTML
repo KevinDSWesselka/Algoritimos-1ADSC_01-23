@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova continuada C1</title>
+</head>
+<body>
+    
+        <!-- a) Solicite o valor do salário, do adicional mensal e do bônus do usuário; -->
+        Entre com o valor do seu salário: <input type="text" id="inp_salario"><br>
+        Entre com o valor do seu adicional mensal: <input type="text" id="inp_adicional"><br>
+        Entre com o valor do seu bônus do usuário: <input type="text" id="inp_bonus"><br>
+
+        <!-- b) Ao clicar no botão " Analisar Minha Renda", calcule o salário bruto do usuário somando as entradas em a), então: -->
+        <button onclick="analizar()">Analisar Minha Renda</button><br>
+        <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analizar(){
+        var salario = Number(inp_salario.value);
+        var adicional = Number(inp_adicional.value);
+        var bonus = Number(inp_bonus.value);
+
+        var salario_bruto = (salario + adicional + bonus);
+
+
+        // b.2) Calcule o valor do desconto de INSS (previdência), que é 10% do valor do salário bruto após a verificação do item b.1);
+
+        // b.3) Calcule o valor do desconto de FGTS (Fundo de Garantia do Tempo de Serviço), que é 8% do valor do salário bruto após a verificação do item b.1);
+
+        // b.4) Calcule o valor do salário líquido do usuário, que é o salário bruto menos os descontos aplicados;
+
+        // b.1) Somente caso o usuário possua um salário bruto igual ou maior que R$10000, calcule e aplique o desconto de IR (imposto de renda), que é 12.5% do valor do bruto;
+        if (salario_bruto >= 10000){
+
+            var var_IR = (salario_bruto * 12.5/100);
+            var desconto_IR = salario_bruto - var_IR;
+            
+            var var_INSS_ir = (salario_bruto * 10/100);
+            var desconto_INSS_ir = desconto_IR - var_INSS_ir;
+
+            var var_FGTS_ir = (salario_bruto * 8/100);
+            var desconto_FGTS_ir = desconto_INSS_ir - var_FGTS_ir;
+
+        // b.5) Em seguida, exiba uma mensagem abaixo do botão, realizando a análise da renda do usuário:
+            div_resultado.innerHTML += `<br>
+            Com o salario R$${salario}, com o adicional de R$${adicional} e bônus de R$${bonus}, você tem:<br>
+            Bruto: R$${salario_bruto} <br> 
+            IR: R$${var_IR} <br>
+            INSS: R$${var_INSS_ir} <br>
+            FGTS: R$${var_FGTS_ir} <br>
+            Liquido: R$${desconto_FGTS_ir} <br>
+            `
+        }
+
+        if (salario_bruto < 10000){
+
+            var var_INSS = (salario_bruto * 10/100);
+            var desconto_INSS = salario_bruto - var_INSS;
+
+            var var_FGTS = (salario_bruto * 8/100);
+            var desconto_FGTS = desconto_INSS - var_FGTS;
+
+            div_resultado.innerHTML += `<br>
+            Com o salario R$${salario}, com o adicional de R$${adicional} e bônus de R$${bonus}, você tem:<br>
+            Bruto: R$${salario_bruto} <br> 
+            IR: R$00.00 <br>
+            INSS: R$${var_INSS} <br>
+            FGTS: R$${var_FGTS} <br>
+            Liquido: R$${desconto_FGTS} <br>
+            `
+         // b.6) Somente caso o valor do salário líquido seja maior que R$2500, exiba abaixo do texto do item b.5) a seguinte mensagem: 
+
+         // Com a renda de R$AAAA, é recomendado poupar R$BBBB, para que em um ano tenha poupado R$CCCC
+
+                if (salario_bruto > 2500){
+                    div_resultado.innerHTML += `
+                    Com a renda de R$${desconto_FGTS}, é recomendado poupar R$${desconto_FGTS * .15}, para que em um ano tenha poupado R$${(desconto_FGTS * .15) * 12}<br>
+                    `   
+                }
+        }
+
+        if ( salario_bruto < 2500) {
+            var var_INSS = (salario_bruto * 10/100);
+            var desconto_INSS = salario_bruto - var_INSS;
+
+            var var_FGTS = (salario_bruto * 8/100);
+            var desconto_FGTS = desconto_INSS - var_FGTS;
+
+            div_resultado.innerHTML += `<br>
+            Com o salario R$${salario}, com o adicional de R$${adicional} e bônus de R$${bonus}, você tem:<br>
+            Bruto: R$${salario_bruto} <br> 
+            IR: R$00.00 <br>
+            INSS: R$${var_INSS} <br>
+            FGTS: R$${var_FGTS} <br>
+            Liquido: R$${desconto_FGTS} <br>
+            `
+         
+                    div_resultado.innerHTML += `
+                    Com a renda de R$${desconto_FGTS}, é recomendado poupar R$${desconto_FGTS * .15}, para que em um ano tenha poupado R$${(desconto_FGTS * .15) * 12}<br>
+                    `   
+
+        }
+    }
+
+</script>
