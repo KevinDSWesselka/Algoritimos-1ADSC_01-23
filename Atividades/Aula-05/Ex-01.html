@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Autoescola</title>
+</head>
+<body>
+    <h1>Autoescola</h1>
+    Qual o seu nome:
+    <input id="imp_nome"><br>
+    Qual sua idade:
+    <input id="imp_idade"><p/>
+    
+    <button onclick="btn_avaliar()">Avaliar aluno</button><p/>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur id dicta facere, excepturi recusandae consectetur, tempora, animi cupiditate incidunt tempore libero velit impedit! Nostrum voluptates sint laboriosam excepturi sequi consequuntur?
+</body>
+</html>
+
+<script>
+
+    function btn_avaliar(){
+        var idade = Number(imp_idade.value);
+        var nome = imp_nome.value;
+
+        if (idade >= 18){
+            alert(`${nome} vamos tirar a CNH?`);
+        } else {
+            alert(`${nome} vai jogar PlayStation!`)
+        }
+    }
+
+</script>

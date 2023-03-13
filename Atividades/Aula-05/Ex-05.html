@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Verificar Notas</title>
+</head>
+<body>
+    
+    <h1>Verificar Notas</h1>
+    Qual a sua primeira nota:
+    <input id="inp_nota1"><br>
+    Qual a sua segunda nota:
+    <input id="inp_nota2"><br>
+    <button onclick="btn_verificar()">Verificar situação</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+
+    
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var nota1 = Number(inp_nota1.value);
+        var nota2 = Number(inp_nota2.value);
+        var media = (nota1 + nota2) /2;
+
+        if (media >= 6){
+            div_resultado.innerHTML = `Parabéns, aprovado!`
+        } else {
+            div_resultado.innerHTML = `Tente outra vez...`
+        }
+    }
+
+</script>

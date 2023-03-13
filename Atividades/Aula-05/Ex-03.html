@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>BOM DOCE</title>
+</head>
+<body>
+    
+    <h1>Mercado BOM DOCE</h1>
+    Quantidade de chocolates:
+    <input id="inp_quantidade">
+    <button onclick="btn_compra()">Compra</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+
+</body>
+</html>
+
+<script>
+
+    function btn_compra(){
+        var quantidade = inp_quantidade.value
+
+        if (quantidade >= 12){
+            div_resultado.innerHTML += `o valor da sua compra foi de R$${quantidade * 2.5}<br>`
+        } else {
+            div_resultado.innerHTML += `o valor da sua compra foi de R$${quantidade * 3}<br>`
+        }
+    }
+
+</script>

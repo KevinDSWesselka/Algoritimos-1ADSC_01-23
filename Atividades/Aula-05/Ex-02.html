@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Banco XPTO</title>
+</head>
+<body>
+    
+    <h1>Banco XPTO</h1>
+    Qual seu saldo na conta:
+    <input id="inp_saldo"><br>
+    Qula o valor do depbito:
+    <input id="inp_debito"><p/>
+    <button onclick="btn_analisar()">Analisar conta</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+
+</body>
+</html>
+
+<script>
+
+    function btn_analisar(){
+        var saldo = inp_saldo.value;
+        var debito = inp_debito.value;
+
+        if ( saldo >= 0){
+            div_resultado.innerHTML = `o saldo atual da conta corrente é 
+             <i style="color: blue;"> ${saldo}</i>`
+        } else {
+            div_resultado.innerHTML = `o saldo atual da conta corrente é 
+             <b style="color: red;"> ${saldo}</b>`
+        }
+    }
+
+</script>

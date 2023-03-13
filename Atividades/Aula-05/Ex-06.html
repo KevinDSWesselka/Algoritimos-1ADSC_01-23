@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Temperatura Ambiente</title>
+</head>
+<body>
+    
+    <h1>Temperatura Ambiente</h1>
+    Qual a temperatura ambiente:
+    <input id="inp_temperatura"><br>
+    <button onclick="btn_verificar()">Verificar clima</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+
+    
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var temperatura = Number(inp_temperatura.value);
+
+        if (temperatura >= 10){
+            div_resultado.innerHTML = `Inapropriada p/ conservar alimento`
+        } else {
+            div_resultado.innerHTML = `Apropriada p/ conservar alimento <img src="https://www.conteudo.senacrs.com.br/wp-content/uploads/2021/10/Alimentacao-saudavel.gif">`
+        }
+    }
+
+</script>

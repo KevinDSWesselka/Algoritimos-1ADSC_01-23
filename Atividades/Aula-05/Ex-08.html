@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Elevador</title>
+</head>
+<body>
+    
+    <h1>Elevador</h1>
+    Quatas mulheres entraram:
+    <input id="inp_mulheres"><br>
+    Quatas homens entraram:
+    <input id="inp_homens"><br>
+    <button onclick="btn_ligar()">Ligar elevador</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_ligar(){
+        var mulheres = Number(inp_mulheres.value);
+        var homens = Number(inp_homens.value);
+        var peso_total = (mulheres * 70) + (homens * 90);
+
+        if (peso_total >= 500){
+            div_resultado.innerHTML = `Alguém precisa descer. Precisa perder ${peso_total - 500}kg para mover o elevador `
+        } else {
+            div_resultado.innerHTML = `Elevador vai se mover, pois está com ${peso_total}kg `
+        }
+    }
+
+</script>
