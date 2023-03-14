@@ -1,34 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt_br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxi</title>
 </head>
-<body style="align-self:flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
-    
-    <h1>Taxi!</h1>
+<body style="align-self: flex-start; width: 50%; margin-left: 25%; margin-top: 6%;">
+
+    <h1>Taxi!</h1> 
     Nome do passageiro: <input id="inp_nomeP" placeholder="Entre com seu Nome"><br/>
-    Distancia em KM's <input id="inp_distancia" placeholder="Distancia em KM's"><br/>
-    Bandeira da Corrida <input type="number" id="inp_bandeira" min="1" max="3"><p/>
+    Distância em KM's: <input id="inp_distancia" placeholder="Distância em KM's"><br/>
+    Bandeira da corrida: <input id="inp_bandeira" type="number" max="3" min="1" placeholder="Apenas de 1 a 3" onchange="validar_inp()"><p/>
+    Horário da corrida: <input id="inp_horario" type="number" max="23" min="0" placeholder="Apenas de 0 a 23" onchange="validar_inp()"><p/>
+    <button onclick="validar()">Calcular corrida</button><p/>
+    <div id="div_resultado"></div>
 
-    Horario da corrida: <input type="number" min="0" max="23"><p/>
-    <button onclick="calcular()">Calcular corrida</button>
+    <script>
 
+        // function validar_inp() {
+        //     if (inp_bandeira.value < 1 || inp_bandeira.value > 3) {
+        //         alert("Digite um valor entre 1 e 3.");
+        //         inp_bandeira.value = 1;
+        //         inp_nomeP.value = inp_nomeP.value;
+        //         inp_distancia.value = inp_distancia.value; 
+        //     }
+        //     if (inp_horario.value < 0 || inp_horario.value > 23) {
+        //         alert("Digite um valor entre 0 e 23.");
+        //         inp_horario.value = 1;
+        //         inp_nomeP.value = inp_nomeP.value;
+        //         inp_distancia.value = inp_distancia.value; 
+        //     }
+        // }
 
+        function validar() {
+            var nome = inp_nomeP.value;
+            var distancia = Number(inp_distancia.value);
+            var bandeira = Number(inp_bandeira.value);
+            var horario = Number(inp_horario.value);
+
+            var valorCorrida = 0;
+            if (bandeira == 1) {
+                if (horario <= 6) {
+                    valorCorrida = distancia * 1.25 * 1.05;
+                }
+                if (horario <= 12) {
+                    valorCorrida = distancia * 1.25 * 1.1;
+                }
+                if (horario <= 23) {
+                    valorCorrida = distancia * 1.25 * 1.15;
+                }
+            }
+
+            if (bandeira == 2) {
+                if (horario <= 6) {
+                    valorCorrida = distancia * 1.25 * 1.1;
+                }
+                if (horario <= 12) {
+                    valorCorrida = distancia * 1.25 * 1.2;
+                }
+                if (horario <= 23) {
+                    valorCorrida = distancia * 1.25 * 1.3;
+                }
+            } 
+            
+            if (bandeira == 3) {
+                if (horario <= 6) {
+                    valorCorrida = distancia * 1.25 * 1.15;
+                }
+                 if (horario <= 12) {
+                    valorCorrida = distancia * 1.25 * 1.3;
+                }
+                if (horario <= 23) {
+                    valorCorrida = distancia * 1.25 * 1.45;
+                }
+            }
+
+            // if (horario >= 0){
+            //     if (horario <= 23){
+            //         if (bandeira >= 1){
+            //             if (bandeira <= 3){
+            //                 div_resultado.innerHTML = `Olá ${nome}, sua corrida será na bandeira ${bandeira},
+            //                 percorrerá ${distancia} km e o total da corrida será de R$ ${valorCorrida.toFixed(2)}`;
+            //             }
+            //         }
+            //     }
+            // }
+           
+            // if (horario < 0){
+            //     if (horario > 23){
+            //         if (bandeira < 1){
+            //             if (bandeira > 3){
+            //                 div_resultado.innerHTML = `Verifique os valores...`;
+            //             }
+            //         }
+            //     }
+            // }
+
+            div_resultado.innerHTML = `Olá ${nome}, sua corrida será na bandeira ${bandeira},
+            percorrerá ${distancia} km e o total da corrida será de R$ ${valorCorrida.toFixed(2)}`;
+        }
+    </script>
 </body>
 </html>
-
-<script>
-
-    function calcular(){
-
-        var distancia = Number(inp_distancia.value);
-        var bandeira = Number(inp_bandeira.valeu);
-
-        
-
-    }
-
-</script>
