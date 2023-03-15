@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Temperatura Ambiente</title>
+</head>
+<body>
+    
+    <h1><marquee SCROLLAMOUNT=20 BEHAVIOR=SLIDE DIRECTION=LEFT>Temperatura Ambiente</marquee></h1>
+    Qual a temperatura ambiente:
+    <input placeholder="Entre com a temperatura" id="inp_temperatura" oninput="inp_verificar()"><br><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+    
+
+</body>
+</html>
+
+<script>
+
+    function inp_verificar(){
+        var temperatura = Number(inp_temperatura.value);
+
+        if (temperatura < 10){
+            div_resultado.innerHTML += `<marquee SCROLLAMOUNT=30 BEHAVIOR=SLIDE DIRECTION=LEFT><a href="https://static.imgs.app/content/assetz/uploads/2017/10/gif-do-garoto-menino-dando-joinha.gif">${temperatura}ºC! Temperatura esta muito baixa </a></marquee>`
+        } else if (temperatura >20) {
+                div_resultado.innerHTML +=`<marquee SCROLLAMOUNT=60 BEHAVIOR=SLIDE DIRECTION=LEFT><a href="https://static.imgs.app/content/assetz/uploads/2017/10/gif-do-garoto-menino-dando-joinha.gif">${temperatura}ºC! A temperatura esta muito alta! </a></marquee>`
+            } else{
+                div_resultado.innerHTML += `<marquee SCROLLAMOUNT=40 BEHAVIOR=SLIDE DIRECTION=LEFT><a href="https://static.imgs.app/content/assetz/uploads/2017/10/gif-do-garoto-menino-dando-joinha.gif">${temperatura}ºC! A temperatura esta ideal </a></marquee>`
+            }
+    }
+
+</script>

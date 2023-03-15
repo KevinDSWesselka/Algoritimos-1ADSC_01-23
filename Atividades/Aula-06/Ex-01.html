@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Ed-Fisica</title>
+</head>
+<body>
+    
+    <h1>Ed-Fisica</h1>
+    Altura do atleta:
+    <input id="inp_altura"><br>
+    <button onclick="btn_avaliar()">Avaliar</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_avaliar(){
+        var altura = Number(inp_altura.value);
+
+        if (altura < 1.65){
+            div_resultado.innerHTML = `Você pode ser piloto de corrida`
+        } else if (altura <= 1.80){
+            if (altura >= 1.65){ 
+            div_resultado.innerHTML = `Você pode ser jogador de futebol`
+            }
+        } else{
+            div_resultado.innerHTML = `Você pode ser jogador de vôlei ou basquete`
+        }
+
+    }
+
+</script>

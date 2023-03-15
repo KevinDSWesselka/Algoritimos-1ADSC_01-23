@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Tuvalu </title>
+</head>
+<body>
+    
+    <h1>Tuvalu </h1>
+    Renda familiar:
+    <input id="inp_renda"><p/>
+    <button onclick="btn_analizar()">Analizar Renda</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_analizar(){
+        var renda = Number(inp_renda.value);
+
+        if (renda <= 250){
+            div_resultado.innerHTML = `Classe E`;
+        } else if (renda > 250){
+            if (renda <= 900){
+                div_resultado.innerHTML = `Classe D`;
+            } else if ( renda > 900){
+                if (renda <= 2500){
+                    div_resultado.innerHTML = `Classe C`;
+                } else if (renda > 2500){
+                    if (renda <= 9500){
+                        div_resultado.innerHTML = `Classe B`;
+                    } else{
+                        div_resultado.innerHTML = `Classe A`;
+                    }
+                }
+            }
+        } 
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Time SP</title>
+</head>
+<body>
+    
+    <h1>Time SP</h1>
+    Informe qual time grande São Paulo você torce:
+    <input id="inp_time"><p/>
+    <button onclick="btn_analizar()">Fale sobre esse time</button>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_analizar(){
+        var in_time = inp_time.value
+
+        if (in_time == "Corinthians"){
+            div_resultado.innerHTML += `Salve o Corinthians`;
+        } else if (in_time == "Palmeiras ") {
+            div_resultado.innerHTML += `Salve o alviverde imponente`;
+        } else if (in_time == "Santos ") {
+            div_resultado.innerHTML += `Agora quem dá a bola é o Santos`;
+        } else if (in_time == "São Paulo") {
+            div_resultado.innerHTML += `Salve o Tricolor paulista`;
+        }
+    }
+
+</script>
