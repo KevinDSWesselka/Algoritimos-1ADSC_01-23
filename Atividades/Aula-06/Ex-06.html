@@ -25,13 +25,13 @@
         var in_time = inp_time.value
 
         if (in_time == "Corinthians"){
-            div_resultado.innerHTML += `Salve o Corinthians`;
-        } else if (in_time == "Palmeiras ") {
-            div_resultado.innerHTML += `Salve o alviverde imponente`;
-        } else if (in_time == "Santos ") {
-            div_resultado.innerHTML += `Agora quem dá a bola é o Santos`;
+            div_resultado.innerHTML += `<span style="background-color: black; color: white;">Salve o Corinthians</span><br/>`;
+        } else if (in_time == "Palmeiras") {
+            div_resultado.innerHTML += `<span style="background-color: green; color: white;">Salve o alviverde imponente</span><br/>`;
+        } else if (in_time == "Santos") {
+            div_resultado.innerHTML += `<span style="background-color: white; color: black;">Agora quem dá a bola é o Santos</span><br/>`;
         } else if (in_time == "São Paulo") {
-            div_resultado.innerHTML += `Salve o Tricolor paulista`;
+            div_resultado.innerHTML += `<span style="background-color: black; color: red;">Salve o Tricolor paulista</span><br/>`;
         }
     }
 
