@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Boa alimentação</title>
+</head>
+<body>
+    
+    <h1>Boa alimentação</h1>
+    Quantos pãe frances por dia:<br>
+    <input id="inp_Pfrances"><p/>
+    Quantos pacotes de bolacha recheada <br> tem comido por dia:<br>
+    <input type="text" id="inp_bolacha"><p/>
+    Quantos copos de achocolatado tem tomado por dia:<br>
+    <input type="text" id="inp_achocolata"><p/>
+    <button onfocus="btn_verificar()">Verificar calorias</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var Pfrances = Number(inp_Pfrances.value);
+        var bolacha = Number(inp_bolacha.value);
+        var achocolatado = Number(inp_achocolata.value);
+
+        var calorias_P = Pfrances * 50;
+        var calorias_B = bolacha * 80;
+        var calorias_A = achocolatado * 70;
+        var calorias_totais = calorias_P + calorias_B + calorias_A;
+
+        if (calorias_totais < 200){
+            div_resultado.innerHTML += `Parabéns, vai sair em forma da quarentena!<br>`
+        } else if ( calorias_totais >= 200){
+            if (calorias_totais <= 400){
+                div_resultado.innerHTML += `Cuidado, vai ficar mais "fofinho(a)" após quarentena!<br>`
+            } else{
+                div_resultado.innerHTML += `Bom, acho que muitos não vão te reconhecer após a quarentena<br>`
+            }
+        } 
+    }
+</script>
