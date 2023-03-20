@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Nota e Frequencia</title>
+</head>
+<body>
+    
+    <h1>Nota e Frequencia</h1>
+    Quais foram suas notas:<br>
+    <input id="inp_nota"><p/>
+    Qual foi a sua frequencia:<br>
+    <input id="inp_frequencia"><p/>
+    <button onclick="btn_verificar()">Avaliar aluno"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var nota = Number(inp_nota.value);
+        var frequencia = Number(inp_frequencia.value);
+
+        if ( nota >= 6 && frequencia >= 75){
+            alert(`Parabéns! Aprovado!`);
+        } else {
+            alert(`Infelizmente, não foi desta vez`);
+        }
+
+
+    }
+</script>

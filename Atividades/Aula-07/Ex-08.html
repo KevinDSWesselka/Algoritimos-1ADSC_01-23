@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Sitema de Login</title>
+</head>
+<body>
+    
+    <h1>Sitema de Login</h1>
+    Qual seu login de usuario:<br>
+    <input id="inp_usuario"><p/>
+    Qual a sua senha de usuario:<br>
+    <input id="inp_senha" type="password"><p/>
+    Qual seu codigo de segurança:<br>
+    <input id="inp_codigo" type="password"><p/>
+    <button onclick="btn_entrar()">Entrar"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_entrar(){
+        var usuario = inp_usuario.value;
+        var senha = inp_senha.value;
+        var codigo = inp_codigo.value;
+
+        if (usuario == 'SPTech' && senha == 'digital' && codigo == '123'){
+            alert(`Usuário autenticado com sucesso`);
+        } else {
+            alert(`Falha na autenticação`);
+        }
+
+
+    }
+</script>

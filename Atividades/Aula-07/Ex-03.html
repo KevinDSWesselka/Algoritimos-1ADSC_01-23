@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Verificar nota</title>
+</head>
+<body>
+    
+    <h1>Verificar nota</h1>
+    Qua sua nota:<br>
+    <input id="inp_renda"><p/>
+    <button onclick="btn_verificar()">Avaliar aluno"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var renda = Number(inp_renda.value);
+
+       if (renda >= 0 && renda <= 10){
+        div_resultado.innerHTML += `Nota válida!<br>`;
+       } else {
+        div_resultado.innerHTML += `Onde já se viu nota menor que 0 e maior que 10?!<br>`;
+       }
+    }
+</script>

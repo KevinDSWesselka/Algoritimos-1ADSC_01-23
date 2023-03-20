@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Verificar Situação</title>
+</head>
+<body>
+    
+    <h1>Verificar Situação</h1>
+    Qual a sua idade:<br>
+    <input id="inp_idade"><p/>
+    Qual o seu salario:<br>
+    <input id="inp_salario"><p/>
+    <button onclick="btn_analizar()">Analisar situação"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_analizar(){
+        var idade = Number(inp_idade.value);
+        var salario = Number(inp_salario.value);
+
+        if (idade < 18 && salario < 2500){
+            div_resultado.innerHTML = `Menor de idade e liso`;
+        }
+
+        if (idade < 18 && salario >= 2500){
+            div_resultado.innerHTML = `Menor de idade e ostentação`;
+        }
+
+        if (idade >= 18 && salario < 3500){
+            div_resultado.innerHTML = `Maior de idade e liso`;
+        }
+
+        if (idade >= 18 && salario >= 3500 && salario <= 7000){
+            div_resultado.innerHTML = `Maior de idade e ostentação`;
+        }
+
+        if (idade >= 18 && salario > 7000){
+            div_resultado.innerHTML = `Maior de idade e mega ostentação`;
+        }
+    }
+</script>   

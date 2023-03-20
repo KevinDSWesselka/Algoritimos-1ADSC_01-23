@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Verificar Nota</title>
+</head>
+<body>
+    
+    <h1>Verificar Nota</h1>
+    Qual a sua nota:<br>
+    <input id="inp_nota"><p/>
+    <button onclick="btn_verificar()">Ver recomendação"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var nota = Number(inp_nota.value);
+
+       if (nota < 6){
+        alert(`Aluno Reprovado`)
+       }
+
+       if (nota < 8.5 && nota >= 6){
+        alert(`Aluno comum e aprovado`)
+       } 
+
+       if (nota >= 8.5 && nota <= 10){
+        alert(`Aluno Exemplar!`)
+       }
+    }
+</script>

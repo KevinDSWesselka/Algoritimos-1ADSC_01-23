@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Netflix</title>
+</head>
+<body>
+    
+    <h1>Netflix</h1>
+    Qual horario que vc acesssa a Netflix:<br>
+    <input id="inp_horario"><p/>
+    <button onclick="btn_verificar()">Ver recomendação"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var horario = Number(inp_horario.value);
+
+       if (horario >= 19 && horario <= 21){
+        div_resultado.innerHTML += `Não é recomendável que você assista sua série favorita no horário ${horario}!"<p/>`;
+       } else {
+        div_resultado.innerHTML += `O horário ${horario} é adequado para assistir sua série favorita!<p/>`;
+       }
+    }
+</script>

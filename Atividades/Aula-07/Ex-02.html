@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Auxilio COVID</title>
+</head>
+<body>
+    
+    <h1>Auxilio COVID</h1>
+    Qual a sua renda:<br>
+    <input id="inp_renda"><p/>
+    <button onclick="btn_verificar()">Verificar ajuda"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_verificar(){
+        var renda = Number(inp_renda.value);
+
+       if (renda >= 1050 && renda <= 2100){
+         alert('Você terá direito!')
+       } else {
+        alert('Você NÃO terá direito')
+       }
+    }
+</script>

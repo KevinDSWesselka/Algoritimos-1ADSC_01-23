@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Verificar Altura</title>
+</head>
+<body>
+    
+    <h1>Verificar Altura</h1>
+    Qual a altura minima:<br>
+    <input id="inp_altura"><p/>
+    Qual a altura maxima:<br>
+    <input id="inp_altura2"><p/><p/><p/>
+
+    Insira o nome do piloto: <input type="text" id="inp_nome"><p/>
+    Insira a altura do piloto: <input type="text" id="inp_alturaP">
+    <button onclick="btn_entrar()">Entrar"</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+
+</body>
+</html>
+
+<script>
+
+    function btn_entrar(){
+        var nome = inp_nome.value;
+        var altura_minima = Number(inp_altura.value);
+        var altura_maxima = Number(inp_altura2.value);
+        var altura_piloto = Number(inp_alturaP.value);
+
+        if (altura_piloto >= altura_minima && altura_piloto <= altura_maxima){
+            div_resultado.innerHTML += `O candidato ${nome} com altura de ${altura_piloto} participará do processo de seleção de piloto <br>`
+        } else{
+            div_resultado.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura_piloto} não atende os requisitos<br>`
+        }
+    }
+</script>   
