@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Verificar Situação</title>
+</head>
+<body>
+    <h1>Verificar Situação</h1>
+    Qual a sua idade:
+    <input id="inp_idade"><p/>
+    Possui abilitação:
+    <input id="inp_abilitacao"><p/>
+    <button onclick="btn_analizar()">Analisar situação</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+</html>
+
+<script>
+
+    function btn_analizar(){
+
+        var idade = Number(inp_idade.value);
+        var abilitacao = inp_abilitacao.value;
+
+       if (idade >= 18 && abilitacao == "S"){
+        div_resultado.innerHTML = `Você pode dirigir!`
+       } else {
+        div_resultado.innerHTML = `Você não pode dirigir!`
+       } 
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Passou?</title>
+</head>
+<body>
+    <h1>Passou?</h1>
+    Qual a sua nota do ENEM:
+    <input id="inp_enem"><p/>
+    Qual a sua nota do vestibular:
+    <input id="inp_vestibular"><p/>
+    <button onclick="btn_analizar()">Avaliação</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+</html>
+
+<script>
+    function btn_analizar(){
+        var enem = Number(inp_enem.value);
+        var vestibular = Number(inp_vestibular.value);
+
+        if (enem >= 800 || vestibular >= 700){
+            alert("Parabéns! Aprovado")
+        } else {
+            alert("Tente semestre que vem!")
+        }
+    }
+</script>

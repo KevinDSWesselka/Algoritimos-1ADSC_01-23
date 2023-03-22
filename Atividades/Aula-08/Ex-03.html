@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Auxilio COVID</title>
+</head>
+<body>
+    <h1>Auxilio COVID</h1>
+    Qual a sua renda individual:
+    <input id="inp_individual"><p/>
+    Qual a sua renda familiar:
+    <input id="inp_familiar"><p/>
+    <button onclick="btn_analizar()">Terei o benefício</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+</html>
+
+<script>
+    function btn_analizar(){
+        var individual = Number(inp_individual.value);
+        var familiar = Number(inp_familiar.value);
+
+        if (individual <= 2000 || familiar <= 3000){
+            div_resultado.innerHTML = `Você terá direito ao auxílio`
+        } else {
+            div_resultado.innerHTML = `Sem direito ao auxílio`
+        }
+        
+    }
+</script>

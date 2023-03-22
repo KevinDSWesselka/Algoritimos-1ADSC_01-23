@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Trea direito a Credito?</title>
+</head>
+<body>
+    <h1>Trea direito a Credito?</h1>
+    Qual o modo de pagamento:
+    <input id="inp_pagamento"><p/>
+    <button onclick="btn_analizar()">Analisar compra</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+</html>
+
+<script>
+    function btn_analizar(){
+        var pagamento = inp_pagamento.value;
+
+        if(pagamento == "Dinheiro" || pagamento == "Cartão de débito"){
+            div_resultado.innerHTML = `Você terá que pagar a vista`
+        } else if (pagamento == "Cartão de crédito" || pagamento == "Boleto") {
+            div_resultado.innerHTML = `Pagamento poderá ser parcelado`
+        } else {
+            div_resultado.innerHTML = ""
+        }
+        
+    }
+</script>

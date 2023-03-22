@@ -10,32 +10,51 @@
 <body>
     
     <h1>Verificar Altura</h1>
-    Qual a altura minima:<br>
+    Qual a altura minima:
     <input id="inp_altura"><p/>
-    Qual a altura maxima:<br>
-    <input id="inp_altura2"><p/><p/><p/>
-
-    Insira o nome do piloto: <input type="text" id="inp_nome"><p/>
-    Insira a altura do piloto: <input type="text" id="inp_alturaP">
-    <button onclick="btn_entrar()">Entrar"</button><p/>
+    Qual a altura maxima:
+    <input id="inp_altura2"><p/>
+    <button onclick="validar_media()">Validar medias</button><p/><p/>
     <div id="div_resultado"></div><p/>
+    <div id="div_resultado2"></div><p/>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
 
 </body>
 </html>
 
 <script>
+        var altura_minima = 0;
+        var altura_maxima = 0;
+
+    function validar_media(){
+        altura_minima = Number(inp_altura.value);
+        altura_maxima = Number(inp_altura2.value);
+
+        if (altura_minima <= 0 && altura_maxima <= 0){
+            alert(`Favor entre com medias validas`)
+        } else if (altura_minima > altura_maxima ) {
+            alert(`Favor entre com medias validas`)
+        } else{
+            alert(`Medias validas, prosiga com o programa...`)
+            div_resultado.innerHTML = `
+            Insira o nome do piloto: <input type="text" id="inp_nome"><p/>
+            Insira a altura do piloto: <input type="text" id="inp_alturaP"><p/>
+            <button onclick="btn_entrar()">Entrar</button><p/>
+            `
+        }
+    }
 
     function btn_entrar(){
+
         var nome = inp_nome.value;
-        var altura_minima = Number(inp_altura.value);
-        var altura_maxima = Number(inp_altura2.value);
         var altura_piloto = Number(inp_alturaP.value);
 
-        if (altura_piloto >= altura_minima && altura_piloto <= altura_maxima){
-            div_resultado.innerHTML += `O candidato ${nome} com altura de ${altura_piloto} participará do processo de seleção de piloto <br>`
+        if (altura_minima > altura_maxima || altura_minima < 0 || altura_maxima < 0){
+            alert(`Favor entre com medias validas`)
+        } else if (altura_piloto >= altura_minima && altura_piloto <= altura_maxima){
+            div_resultado2.innerHTML += `O candidato ${nome} com altura de ${altura_piloto} participará do processo de seleção de piloto <br>`
         } else{
-            div_resultado.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura_piloto} não atende os requisitos<br>`
+            div_resultado2.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura_piloto} não atende os requisitos<br>`
         }
     }
 </script>   
