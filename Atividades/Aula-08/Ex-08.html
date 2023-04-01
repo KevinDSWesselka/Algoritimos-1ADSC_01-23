@@ -10,11 +10,13 @@
 <body>
     <h1>Qual a empresa de preferencia</h1>
     Qual o nome da empresa:
-    <input id="inp_empresa"><p/>
+    <input id="inp_empresa" placeholder="Nome da empresa"><p/>
     Qual o valor da bolsa da empresa:
-    <input id="inp_bolsa"><p/>
+    <input id="inp_bolsa" placeholder="Em Reias"><p/>
     Qual o valor do VR:
-    <input id="inp_vr"><p/>
+    <input id="inp_vr" placeholder="Em Reias"><p/>
+    Qual o tempo para chegar lá:
+    <input id="inp_tempo" placeholder="Em minutos"><p/>
     <button onclick="btn_analizar()">É preferida?</button><p/>
     <div id="div_resultado"></div><p/>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
@@ -26,7 +28,12 @@
         var empresa = inp_empresa.value;
         var bolsa = Number(inp_bolsa.value);
         var vr = Number(inp_vr.value);
+        var tempo = Number(inp_tempo.value)
 
-        if ()
+        if (bolsa >= 1800 || vr >= 20 || tempo <= 30){
+            div_resultado.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+        } else{
+            div_resultado.innerHTML = `A empresa ${empresa} está fora da sua lista`
+        }
     }
 </script>
