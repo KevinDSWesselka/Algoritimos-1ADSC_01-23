@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Números cabalísticos</title>
+</head>
+
+<body>
+    <h1>Números cabalísticos</h1>
+    <button onclick="contar()">Números cabalísticos</button><br/>
+    <div id="resultado"></div>
+    
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
+    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var numero = 0;
+        while (numero <= 30) {
+            if (numero == 3 || numero == 4 || numero == 7 || numero == 10 || numero == 12){
+                resultado.innerHTML += ``
+            }else {
+              resultado.innerHTML += numero + `<br>`  
+            } 
+            numero ++;
+        }
+    }
+
+</script>

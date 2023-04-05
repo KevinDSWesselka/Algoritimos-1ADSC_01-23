@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Contador de 1 a 15</title>
+</head>
+
+<body>
+    <h1>Contador</h1>
+    Entre com um numero
+    <input type="text" placeholder="De 0 até 200" id="inp_numero"><br>
+    Entre com uma frase
+    <input type="text" placeholder="Entre com uma frase" id="inp_frase"><br>
+    <button onclick="contar()">Papagaio</button><br/>
+    <div id="resultado"></div>
+    
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
+    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var numero = 1;
+        var numero_user = Number(inp_numero.value);
+        var frase = inp_frase.value
+
+        while (numero <= numero_user) {
+            alert(`${frase}`)
+            numero ++;
+        }
+    }
+
+</script>
