@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Tabuada</title>
+</head>
+
+<body>
+    <h1>Tabuada</h1>
+    Escolha a tabuada:
+    <select id=selec_box>
+        <option value="" >Selecione a Tabuada</option>
+        <option value="1" >01</option>
+        <option value="2" >02</option>
+        <option value="3" >03</option>
+        <option value="4" >04</option>
+        <option value="5" >05</option>
+        <option value="6" >06</option>
+        <option value="7" >07</option>
+        <option value="8" >08</option>
+        <option value="9" >09</option>
+        <option value="10" >10</option>
+    </select><p/>
+    Até qual numero:
+    <input type="text" placeholder="Até qual numero" id="inp_ate"><p/>
+    <button onclick="btn_calculo()">Ver Tabuada</button><br/><p/>
+    <div id="div_resultado"></div>
+    
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
+    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+
+</html>
+
+<script>
+
+    function btn_calculo() {
+        var box = Number(selec_box.value);
+        var ate = Number(inp_ate.value);
+        var i = 0;
+
+        while (i < ate){
+            
+        }
+    }
+
+</script>

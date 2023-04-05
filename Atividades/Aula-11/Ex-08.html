@@ -11,8 +11,8 @@
 
 <body>
     <h1>Contador</h1>
-    Entre com um numero
-    <input type="text" placeholder="De 0 até 200" id="inp_numero">
+    Entre com um numero:<br>
+    <input type="text" placeholder="De 0 até 200" id="inp_numero"><p/>
     <button onclick="contar()">Viva o 7!</button><br/>
     <div id="resultado"></div>
     
@@ -28,16 +28,16 @@
         var numero = 0;
         var numero_user = Number(inp_numero.value);
 
-        if (numero_user >= 0 && numero_user <= 100){
+        if (numero_user > 0 && numero_user < 200){
             while (numero_user <= 200) {
-                if ((numero_user % 7) == 0)
+                if ((numero_user % 7) == 0){
                 resultado.innerHTML += numero_user + `<br>`   
-                numero_user ++;
+               }
+               numero_user ++;
             }
         } else {
             alert("Entre com um valor entre 0 e 200")
         }
-       
     }
 
 </script>

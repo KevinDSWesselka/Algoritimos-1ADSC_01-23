@@ -12,7 +12,7 @@
 <body>
     <h1>Contador</h1>
     Entre com um numero
-    <input type="text" placeholder="De 0 até 200" id="inp_numero"><br>
+    <input type="text" placeholder="Ex: 2" id="inp_numero"><br>
     Entre com uma frase
     <input type="text" placeholder="Entre com uma frase" id="inp_frase"><br>
     <button onclick="contar()">Papagaio</button><br/>
@@ -28,11 +28,19 @@
 
     function contar() {
         var numero = 1;
+        var contador = 0
         var numero_user = Number(inp_numero.value);
         var frase = inp_frase.value
+        var mensagem = ""
 
         while (numero <= numero_user) {
-            alert(`${frase}`)
+
+            while (contador < numero_user){
+                contador++
+                mensagem += frase + "\n"
+            }
+
+            alert(`${mensagem}`)
             numero ++;
         }
     }
