@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Validar IMC</title>
+</head>
+<body>
+    <h1>Validar IMC</h1>
+    Qual o seu peso:
+    <input type="text" id="inp_peso"><br>
+    Qual a sua altura:
+    <input type="text" id="inp_altura"><p/>
+    <button onclick="verificar()">verificar IMC</button><p/>
+    <div id="div_resultado"></div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam tempore dolorem, ad quam velit eos voluptatum eum quaerat, officiis delectus atque neque cumque sequi officia vitae ab, repellat qui quasi?
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var peso = Number(inp_peso.value);
+        var altura = Number(inp_altura.value);
+
+            if (altura >= 3){
+                altura = altura * 100;
+            }
+            var IMC = peso / (altura * altura);
+            var validar_inp = peso != "" && altura != "";
+            var imc_baixo = IMC < 18.5;
+            var imc_ideal = IMC >= 18.5 && IMC <= 24.9;
+            var imc_alto = IMC > 24.9 && IMC <= 30;
+            var imc_obeso = IMC > 30 && IMC <= 35;
+            var imc_extremo = IMC > 35;
+
+            if (validar_inp){
+                if (imc_baixo){
+                    div_resultado.innerHTML += `
+                    <span style="color: blue;">Abaixo do peso</span><br>`;
+                } else if (imc_ideal){
+                    div_resultado.innerHTML += `
+                    <span style="color: green;">Peso ideal</span><br>`;
+                } else if (imc_alto){
+                    div_resultado.innerHTML += `
+                    <span style="color: yellow;">Excesso de Peso</span><br>`;
+                } else if (imc_obeso){
+                    div_resultado.innerHTML += `
+                    <span style="color: orange;">Obsedidade</span><br>`;
+                } else if (imc_extremo){
+                    div_resultado.innerHTML += `
+                    <span style="color: red;">Obsedidade extrema</span><br>`;
+                }
+            } else{
+                alert("Preencha os Campos")
+            }
+        }
+</script>

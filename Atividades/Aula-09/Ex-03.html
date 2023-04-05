@@ -1,73 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt_br">
-
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <title>Aumentar e diminuir</title>
+    <title>Aprovado ou não</title>
 </head>
-
 <body>
-    <h1>Aumentar e diminuir</h1>
-    <span style="color: rgb(48, 48, 121);">
-        Total guardado no cofrinho: R$<span id="span_total">0</span><br>
-        Depósitos efetuados: <span id="span_depositos">0</span><br>
-        Retiradas efetuadas: <span id="span_retiradas">0</span><br>
-    </span>
-
-    <button onclick="btn_depositar50()">Depositar 0.50</button><br>
-    <button onclick="btn_depositar200()">Depositar 2,00</button><br>
-    <button onclick="btn_retirar50()">Retirar 0.50</button><br>
-    <button onclick="btn_retirar()">Retirar</button>
-    <p />
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
-    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+    <h1>Aprovado ou não</h1>
+    Qual a nota: 
+    <input id="inp_nota" placeholder="Ex: 8.87"><br>
+    Qual a frequencia: 
+    <input id="inp_frequencia" placeholder="Ex: 97"><p/>
+    <button onclick="btn_verificar()">Avaliar</button>
+    <div id="div_resultado"></div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eum qui voluptate, cum in nostrum voluptatem dicta reiciendis tempore molestias perspiciatis quisquam aliquam blanditiis ipsam, vitae est sequi totam. Quas.
 </body>
-
 </html>
 
 <script>
+    function btn_verificar() {
+        var nota = Number(inp_nota.value);
+        var frequencia = Number(inp_frequencia.value);
+        var aprovado = frequencia >= 75 && nota >= 6;
+        var reprovado_nota = nota < 6;
+        var reprovado_freq = frequencia < 75;
 
-    var total_guardado = 0;
-    var depositos = 0;
-    var retiradas = 0;
-
-    function btn_depositar50() {
-        total_guardado += .5;
-        depositos += 1;
-
-        span_depositos.innerHTML = `${depositos}`
-        span_total.innerHTML = `${total_guardado.toFixed(2)}`
-    }
-
-    function btn_depositar200() {
-        total_guardado += 2;
-        depositos += 1;
-
-        span_depositos.innerHTML = `${depositos}`
-        span_total.innerHTML = `${total_guardado.toFixed(2)}`
-    }
-
-    function btn_retirar50() {
-        total_guardado -= .5;
-        retiradas += 1;
-
-        span_retiradas.innerHTML = `${retiradas}`
-        span_total.innerHTML = `${total_guardado.toFixed(2)}`
-    }
-
-    function btn_retirar() {
-        if (total_guardado <= 0) {
-            alert("Conta Zerada!")
-        } else {
-            total_guardado = 0;
-            retiradas += 1;
-
-            span_retiradas.innerHTML = `${retiradas}`
-            span_total.innerHTML = `${total_guardado.toFixed(2)}`
+        if (aprovado){
+            div_resultado.innerHTML = `Parabéns, aprovado(a)!<br>`
         }
-    }
 
+        if (reprovado_nota){
+            div_resultado.innerHTML += `Reprovado(a) por nota!<br>`
+        }
+
+        if (reprovado_freq){
+            div_resultado.innerHTML += `Reprovado(a) por frequência!<br>`
+        } 
+    }
 </script>

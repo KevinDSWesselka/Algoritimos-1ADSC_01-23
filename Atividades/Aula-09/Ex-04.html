@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Idades</title>
+</head>
+<body>
+    <h1>Idades</h1>
+    Informe sua idade:
+    <input id="inp_idade" placeholder="Entre com sua idade"><p/>
+    <button onclick="btn_verificar()">Total de pontos</button><br>
+    <div id="div_resultado"></div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, facilis quo placeat exercitationem sequi quos sit ipsam dolorum quia error voluptas? Officia illo ullam debitis ipsum soluta corrupti, voluptatem magni.
+</body>
+</html>
+
+<script>
+    function btn_verificar() {
+        var idade = Number(inp_idade.value);
+        var criança = idade <= 12;
+        var adolescente = idade > 12 && idade <= 18;
+        var adulto = idade > 18 && idade < 65;
+        var idoso = idade >= 65;
+
+        var infância = 10;
+        var adolescência = 20;
+        var velho = 50;
+
+        var calculo_inf_ado = infância + adolescência;
+        var calculo_ido = calculo_inf_ado + 50;
+
+        var criança_negada = !criança;
+        var adolescente_negada = !adolescente;
+
+        if (criança){
+            div_resultado.innerHTML += `
+            Já passou pela infância: ${criança} <br>
+            Já passou pela adolescência: ${adolescente} <br>
+            Já é um idoso: ${idoso} <br>
+            TOTAL DE PONTOS: ${infância} <br>`;
+        } else if (adolescente){
+            div_resultado.innerHTML += `
+            Já passou pela infância: ${criança_negada}<br>
+            Já passou pela adolescência: ${adolescente}<br>
+            Já é um idoso: ${idoso} <br>
+            TOTAL DE PONTOS:${calculo_inf_ado} <br>`;
+        } else if (adulto){
+            div_resultado.innerHTML += `
+            Já passou pela infância: ${criança_negada} <br>
+            Já passou pela adolescência: ${adolescente_negada} <br>
+            Já é um idoso: ${idoso} <br>
+            TOTAL DE PONTOS:${calculo_inf_ado} <br>`;
+        } else if (idoso){
+            div_resultado.innerHTML += `
+            Já passou pela infância: ${criança_negada} <br>
+            Já passou pela adolescência: ${adolescente_negada} <br>
+            Já é um idoso: ${idoso} <br>
+            TOTAL DE PONTOS:${calculo_ido} <br>`;
+        }
+    }
+</script>

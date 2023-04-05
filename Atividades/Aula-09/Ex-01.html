@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <title>Aumentar e diminuir</title>
+    <title>Validar Login</title>
 </head>
 <body>
-    <h1>Aumentar e diminuir</h1>
-    <span id="span_resultado" ><img style="width: 20px; height: 15vh;" src="https://media.tenor.com/QmNSPhdpO3sAAAAC/wide-putin.gif" alt="Putim Wide"></span><p/>
-    <button onclick="btn_aumentar()">Aumentar</button>
-    <button onclick="btn_diminuir()">Diminuir</button><p/>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+    <h1>Validar Login</h1>
+    Login: 
+    <input type="text" placeholder="Login" id="inp_login"><br>
+    Senha: 
+    <input type="password" placeholder="Senha" id="inp_senha"><br>
+    <button onclick="verificar()">Entrar</button><p/>
+    <div id="div_resultado"></div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis blanditiis, voluptas debitis aliquid sint consequuntur quisquam enim aut nesciunt sed perspiciatis expedita repudiandae esse. Ea hic eum explicabo consectetur?
 </body>
 </html>
 
 <script>
+    function verificar() {
+        var login_ok = inp_login.value == "aidimin";
+        var senha_ok = inp_senha.value == "seinha";
 
-    var tm_pix = 100;
-    function btn_aumentar(){
-        span_resultado.innerHTML = `<img style="width: ${tm_pix = tm_pix + 50}px; height: 15vh;" src="https://media.tenor.com/QmNSPhdpO3sAAAAC/wide-putin.gif" alt="Putim Wide">`
+        if (login_ok && senha_ok){
+            div_resultado.innerHTML = `
+            <span style="color: blue;">Usuário autenticado com sucesso!</span><p/>`
+        } else if (!login_ok &&  !senha_ok){
+            div_resultado.innerHTML = `
+            <span style="color: red;">Seu login está inválido!</span>
+            <span style="color: red;">Sua senha está inválida!</span><p/>`
+        } else if (!login_ok){
+            div_resultado.innerHTML = `
+            <span style="color: red;">Seu login está inválido!</span><p/>`
+        } else if (!senha_ok){
+            div_resultado.innerHTML = `
+            <span style="color: red;">Sua senha está inválida!</span><p/>`
+            alert("Entre em contato com o suporte para recuperar sua senha")
+        }
     }
-    function btn_diminuir(){
-        span_resultado.innerHTML = `<img style="width: ${tm_pix = tm_pix - 50}px; height: 15vh;" src="https://media.tenor.com/QmNSPhdpO3sAAAAC/wide-putin.gif" alt="Putim Wide">`
-    }
-
 </script>

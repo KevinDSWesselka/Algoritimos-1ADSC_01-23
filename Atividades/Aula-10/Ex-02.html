@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Grana Atual</title>
+</head>
+<body>
+    <h1>Grana Atual</h1>
+    Qual seu salario atual:
+    <input type="text" id="grana_atula">
+    <button onclick="confirm_salario()">Confirmar Salario</button><p/>
+    <div id="div_resultado_salario"></div><p/>
+
+    <div id="div_botoes"></div>
+    
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+</html>
+
+<script>
+
+    var dinheiro = 0
+
+    function confirm_salario() {
+        dinheiro = Number(grana_atula.value);
+        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
+
+        div_botoes.innerHTML = `
+        <button onclick="pagar_100()">Pagar conta de 100</button><p/>
+        <button onclick="pagar_500()">Pagar conta de 500</button><p/>
+        <button onclick="ganhar_2000()">Ganhar 2000 na loteria</button><p/>
+        `
+    }
+
+    function pagar_100(){
+        dinheiro = dinheiro - 100;
+        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
+    }
+
+    function pagar_500(){
+        dinheiro = dinheiro - 500;
+        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
+    }
+
+    function ganhar_2000(){
+        dinheiro = dinheiro + 2000;
+        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
+    }
+
+
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Aumentar e diminuir</title>
+</head>
+<body>
+    <h1>Aumentar e diminuir</h1>
+    <span id="span_resultado" ><img style="width: 20px; height: 15vh;" src="https://media.tenor.com/QmNSPhdpO3sAAAAC/wide-putin.gif" alt="Putim Wide"></span><p/>
+    <button onclick="btn_aumentar()">Aumentar</button>
+    <button onclick="btn_diminuir()">Diminuir</button><p/>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+</html>
+
+<script>
+
+    var tm_pix = 100;
+    function btn_aumentar(){
+        span_resultado.innerHTML = `<img style="width: ${tm_pix = tm_pix + 50}px; height: 15vh;" src="https://media.tenor.com/QmNSPhdpO3sAAAAC/wide-putin.gif" alt="Putim Wide">`
+    }
+    function btn_diminuir(){
+        span_resultado.innerHTML = `<img style="width: ${tm_pix = tm_pix - 50}px; height: 15vh;" src="https://media.tenor.com/QmNSPhdpO3sAAAAC/wide-putin.gif" alt="Putim Wide">`
+    }
+
+</script>

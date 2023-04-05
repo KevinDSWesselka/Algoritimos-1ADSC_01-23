@@ -1,54 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt_br">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <title>Grana Atual</title>
+    <title>Validar Altura</title>
 </head>
 <body>
-    <h1>Grana Atual</h1>
-    Qual seu salario atual:
-    <input type="text" id="grana_atula">
-    <button onclick="confirm_salario()">Confirmar Salario</button><p/>
-    <div id="div_resultado_salario"></div><p/>
+    <h1>Validar Altura</h1>
+    Qual sua altura:
+    <input id="inp_altura" placeholder="Ex: 1.80"><p/>
+    <button onclick="btn_analizar()">Analisar para esportes</button><p/>
+    <div id="div_resultado"></div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolorem saepe hic numquam, provident recusandae unde excepturi aut tempora amet consequuntur suscipit, aliquid similique dolor praesentium sit, reprehenderit autem est.
 
-    <div id="div_botoes"></div>
-    
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
 </body>
 </html>
 
 <script>
+    function btn_analizar() {
+        var altura = Number(inp_altura.value);
+        var validar_alt_baixa = altura <= 1.60;
+        var validar_alt_grande = altura > 1.60 && altura <= 1.85;
 
-    var dinheiro = 0
-
-    function confirm_salario() {
-        dinheiro = Number(grana_atula.value);
-        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
-
-        div_botoes.innerHTML = `
-        <button onclick="pagar_100()">Pagar conta de 100</button><p/>
-        <button onclick="pagar_500()">Pagar conta de 500</button><p/>
-        <button onclick="ganhar_2000()">Ganhar 2000 na loteria</button><p/>
-        `
+        if (validar_alt_baixa){
+            div_resultado.innerHTML += `
+            Pode tentar ser piloto(a) de corrida<p/>
+            Pode tentar ser velejador(a)<br>`
+        } else if (validar_alt_grande){
+            div_resultado.innerHTML += `
+            Pode tentar ser jogador de futebol ou handbol<p/>`
+        }
     }
-
-    function pagar_100(){
-        dinheiro = dinheiro - 100;
-        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
-    }
-
-    function pagar_500(){
-        dinheiro = dinheiro - 500;
-        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
-    }
-
-    function ganhar_2000(){
-        dinheiro = dinheiro + 2000;
-        div_resultado_salario.innerHTML = `Grana atual: R$${dinheiro}`
-    }
-
-
 </script>

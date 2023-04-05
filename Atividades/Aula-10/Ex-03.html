@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Aumentar e diminuir</title>
+</head>
+
+<body>
+    <h1>Aumentar e diminuir</h1>
+    <span style="color: rgb(48, 48, 121);">
+        Total guardado no cofrinho: R$<span id="span_total">0</span><br>
+        Depósitos efetuados: <span id="span_depositos">0</span><br>
+        Retiradas efetuadas: <span id="span_retiradas">0</span><br>
+    </span>
+
+    <button onclick="btn_depositar50()">Depositar 0.50</button><br>
+    <button onclick="btn_depositar200()">Depositar 2,00</button><br>
+    <button onclick="btn_retirar50()">Retirar 0.50</button><br>
+    <button onclick="btn_retirar()">Retirar</button>
+    <p />
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
+    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+</body>
+
+</html>
+
+<script>
+
+    var total_guardado = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function btn_depositar50() {
+        total_guardado += .5;
+        depositos += 1;
+
+        span_depositos.innerHTML = `${depositos}`
+        span_total.innerHTML = `${total_guardado.toFixed(2)}`
+    }
+
+    function btn_depositar200() {
+        total_guardado += 2;
+        depositos += 1;
+
+        span_depositos.innerHTML = `${depositos}`
+        span_total.innerHTML = `${total_guardado.toFixed(2)}`
+    }
+
+    function btn_retirar50() {
+        total_guardado -= .5;
+        retiradas += 1;
+
+        span_retiradas.innerHTML = `${retiradas}`
+        span_total.innerHTML = `${total_guardado.toFixed(2)}`
+    }
+
+    function btn_retirar() {
+        if (total_guardado <= 0) {
+            alert("Conta Zerada!")
+        } else {
+            total_guardado = 0;
+            retiradas += 1;
+
+            span_retiradas.innerHTML = `${retiradas}`
+            span_total.innerHTML = `${total_guardado.toFixed(2)}`
+        }
+    }
+
+</script>
