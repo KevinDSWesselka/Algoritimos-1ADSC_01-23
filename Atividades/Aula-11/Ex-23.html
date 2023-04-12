@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Carona</title>
+</head>
+
+<body>
+    <h1>Carona</h1>
+    Numero Maior:
+    <input type="text" style="width: 240px;" id="inp_maior" placeholder="Maior que o segundo e menor que 100"><br>
+    Numero Menor:
+    <input type="text" style="width: 240px;" id="inp_menor" placeholder="Menor que o primeiro e maior que 1"><br>
+    Numero para Dividir:
+    <input type="text" style="width: 80px;" id="inp_dividir" placeholder="Entre 3 a 10"><br>
+    <button onclick="validar()">Contar</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+</body>
+</html>
+
+<script>
+    function validar() {
+        var maior = Number(inp_maior.value);
+        var menor = Number(inp_menor.value);
+        var dividir = Number(inp_dividir.value);
+        var soma_num = 0;
+        var media_num = 0;
+        var maior_num = 0;
+        var menor_num = 0;
+        var divisivel = maior / dividir;
+
+        if (maior > 100 || maior < menor){
+            alert(`Entre com um valor valido em "Numero Maior:"`);
+        }
+        if (menor <= 1 || menor > maior){
+            alert(`Entre com um valor valido em "Numero Menor:"`);
+        }
+        if (dividir < 3 || dividir > 10){
+            alert(`Entre com um valor valido em "Numero para Dividir:"`);
+        }
+
+        for(var i = 1; menor <= maior; i++){
+            if(menor % dividir == 0){
+                div_resultado.innerHTML += `${i}, `
+            }
+        }
+
+    }
+</script>
+
+QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: 99 
+
+    SOMATÓRIO DOS NÚMEROS EXIBIDOS: 999 
+
+    MÉDIA DOS NÚMEROS EXIBIDOS: 99,99 
+
+    MAIOR NÚMERO EXIBIDO: 99 
+
+    MENOR NÚMERO EXIBIDO: 99 
