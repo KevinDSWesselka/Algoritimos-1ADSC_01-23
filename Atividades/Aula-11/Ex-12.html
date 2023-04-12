@@ -6,35 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <title>Contador de 1 a 15</title>
+    <title>Tabuada</title>
 </head>
 
 <body>
-    <h1>Contador</h1>
-    Quantas voltas:
-    <input type="text" placeholder="Voltas durante a corrida" id="inp_voltas">
-    <button onclick="contar()">Iniciar corrida!</button><br/>
-    <div id="resultado"></div>
-    
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
-    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+    <h1>Tabuada</h1>
+    Escolha a tabuada:
+    <select name="" id="combo_box">
+        <option value="">Escolha um NUmero</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select><br>
+    Selecione o numero:
+    <input type="text" id="inpu_numero2"><br>
+    <button onclick="tabuada()">Ver tabuada</button><p/>
+    <div id="div_resposta"></div>
+
 </body>
 
 </html>
 
 <script>
+    function tabuada() {
+        div_resposta.innerHTML = ``
+        var numero_1 = Number(combo_box.value);
+        var numero_2 = Number(inpu_numero2.value);
+        var i = 1;
+        var mult = 0;
 
-    function contar() {
-        var numero = 1;
-        var numero_voltas = Number(inp_voltas.value);
-
-        while (numero <= numero_voltas) {
-            resultado.innerHTML += `Carro dando a ${numero}° volta <br>`  
-            numero ++;
-            if((numero - 1) == numero_voltas){
-                resultado.innerHTML += `Corrida finalizada!<br>`
+        while (i != numero_2) {
+            i++
+            mult = numero_1 * i;
+            if (mult % 2 == 0) {
+                div_resposta.innerHTML += `<p style="color: blue">${numero_1} x ${i} = ${mult} </p>`
+            } else {
+                div_resposta.innerHTML += `<p style="color: red">${numero_1} x ${i} = ${mult} </p>`
             }
-        } 
-    }
+        }
 
+    }
 </script>

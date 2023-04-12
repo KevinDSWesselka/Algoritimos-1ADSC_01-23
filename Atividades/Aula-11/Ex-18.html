@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Carona</title>
+</head>
+
+<body>
+    <h1>Carona</h1>
+    Quantas Cocas já bebeu:
+    <input type="text" id="inp_cocas" placeholder="Na vida"><br>
+    <button onclick="validar()">Ver a quantidade</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+</body>
+</html>
+
+<script>
+    function validar() {
+        var numero = Number(inp_cocas.value);
+        div_resultado.innerHTML = ""
+
+        for (var i = 1; i <= numero; i++){
+            div_resultado.innerHTML += `<img width="180px" src="https://img.quizur.com/f/img6400d7eee58ce9.93564124.jpeg?lastEdited=1677776908" alt="">`
+        }
+    }
+</script>

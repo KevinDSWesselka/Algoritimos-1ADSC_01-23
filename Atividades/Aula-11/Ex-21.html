@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Carona</title>
+</head>
+
+<body>
+    <h1>Carona</h1>
+    Quantos depositos:
+    <input type="text" id="inp_deposito" placeholder="Quantos depossitos"><br>
+    Valor de cada deposito:
+    <input type="text" id="inp_valor" placeholder="Ex: 1500.50"><br>
+    <button onclick="validar()">Acompanhar grana</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+</body>
+</html>
+
+<script>
+    function validar() {
+        var quantidade = Number(inp_deposito.value);
+        var valor = Number(inp_valor.value);
+        var total = valor;
+        var acrecimo = 0;
+
+        
+        div_resultado.innerHTML += `1º Mês: R$${valor} <p/>`;
+        for (var i = 2; quantidade >= i; i++){
+            acrecimo = (total + valor) * .01;
+            if (i % 3 == 0){
+                div_resultado.innerHTML += `${i}º Mês: R$ ${(total += valor + acrecimo).toFixed(2)}<br>`;
+            } else{
+                div_resultado.innerHTML += `${i}º Mês: R$ ${(total += valor).toFixed(2)}<br>`;
+            }
+        }
+        div_resultado.innerHTML += `Total guardado: R$${total}<br>`;
+    }
+</script>

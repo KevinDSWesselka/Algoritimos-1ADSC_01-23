@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css"> 
+    <title>Idades</title>
+</head>
+
+<body>
+    <h1> Idades</h1>
+    Sua idade: 
+    <input type="text" id="inp_idade" onkeyup="validar()"><br>
+    <div id="resposta"></div>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus exercitationem nostrum dolor minus quis. Consequuntur at vel qui cumque odio consequatur provident quos incidunt, enim necessitatibus quo ipsam ut suscipit.
+</body>
+
+</html>
+
+<script>
+    function validar(){
+        resposta.innerHTML = ``
+        var idade = inp_idade.value
+        var i = 0
+        var pri_inf = "Primeira Infância"
+        var pre_esc = "Pré-escolar"
+        var seg_inf = "Segunda Infânci"
+        var adol = "Adolescência"
+        var adul = "Adulto"
+        var mel_ida = "Melhor idade"
+        var matu = "Matusalém"
+        resposta.innerHTML = ""
+
+        while (i <= idade) {
+            if (i <= 4){ 
+                resposta.innerHTML += `${i} anos (${pri_inf}) <br>`
+            } else if (i <= 6){
+                resposta.innerHTML += `${i} anos (${pre_esc}) <br>`
+            } else if (i <= 10){
+                resposta.innerHTML += `${i} anos (${seg_inf}) <br>`
+            } else if (i < 18) {
+                resposta.innerHTML += `${i} anos (${adol}) <br>`
+            } else if (i < 50) {
+                resposta.innerHTML += `${i} anos (${adul})<br>`
+            } else if (i < 100) {
+                resposta.innerHTML += `${i} anos (${mel_ida})<br>`
+            } else {
+                resposta.innerHTML += `${i} anos ${matu}<br>`
+            }
+            i++
+        }
+    }
+
+</script>

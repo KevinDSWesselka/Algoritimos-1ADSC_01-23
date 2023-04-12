@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Carona</title>
+</head>
+
+<body>
+    <h1>Carona</h1>
+    Quantos café com leite já bebeu:
+    <input type="text" id="inp_cale" placeholder="Na vida"><br>
+    <button onclick="validar()">Ver a quantidade</button><p/>
+    <div id="div_resultado"></div><p/>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+</body>
+</html>
+
+<script>
+    function validar() {
+        var numero = Number(inp_cale.value);
+        var leite = `<img width="180px" src="https://stories.tudogostoso.com.br/pao-de-leite-em-po-de-3-ingredientes/assets/5.jpeg" alt="">`
+        var cafe = `<img width="180px" src="https://media.istockphoto.com/id/1090012772/es/foto/caf%C3%A9-molido-en-cuchara.jpg?s=612x612&w=0&k=20&c=naj87z0PuFQWcbmb8_pPlBj2d10zTlwC3KxQqw0jQ54=" alt="">`
+        div_resultado.innerHTML = "";
+
+        for (var i = 1; i <= numero; i++){
+            div_resultado.innerHTML += leite
+            div_resultado.innerHTML += `${cafe} ${cafe}`
+        }
+    }
+</script>

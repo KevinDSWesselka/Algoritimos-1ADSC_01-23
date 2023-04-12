@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Ghost, do outra lado da vida</title>
+</head>
+
+<body>
+    <h1>Ghost, do outra lado da vida</h1>
+    Quantos elevantes:
+    <input type="text" id="inp_elevantes"><br>
+    <button onclick="validar()">Atazanar a médium</button>
+    <div id="div_resultado"></div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+</body>
+</html>
+
+<script>
+    function validar() {
+        var numero = Number(inp_elevantes.value);
+        var incomodam = "incomodam";
+
+        if (numero < 2){
+            div_resultado.innerHTML = `1 Elefante incomoda muita gente<br>`;
+        }
+
+        for (var i = 2; i <= numero; i++){
+            incomodam += `, incomodam`;
+            div_resultado.innerHTML += `1 Elefante incomoda muita gente<br>`;
+            div_resultado.innerHTML += `${i} Elefante ${incomodam} muito mais<br>`;
+        }
+    }
+</script>

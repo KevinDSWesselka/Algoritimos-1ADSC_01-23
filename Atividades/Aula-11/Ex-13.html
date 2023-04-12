@@ -6,45 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <title>Tabuada</title>
+    <title>Rotina de Academia</title>
 </head>
 
 <body>
-    <h1>Tabuada</h1>
-    Escolha a tabuada:
-    <select id=selec_box>
-        <option value="" >Selecione a Tabuada</option>
-        <option value="1" >01</option>
-        <option value="2" >02</option>
-        <option value="3" >03</option>
-        <option value="4" >04</option>
-        <option value="5" >05</option>
-        <option value="6" >06</option>
-        <option value="7" >07</option>
-        <option value="8" >08</option>
-        <option value="9" >09</option>
-        <option value="10" >10</option>
-    </select><p/>
-    Até qual numero:
-    <input type="text" placeholder="Até qual numero" id="inp_ate"><p/>
-    <button onclick="btn_calculo()">Ver Tabuada</button><br/><p/>
+    <h1>Rotina de Academia </h1>
+    De quantos em quantos dias você faz musculação:
+    <input type="text" id="inp_dia" onkeyup="avaliar()"><br>
     <div id="div_resultado"></div>
-    
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus nisi odio quasi. Aperiam dolorem ab quisquam
-    pariatur ducimus repellat ullam minus placeat id maiores, vero ea quam voluptatem excepturi autem.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
 </body>
-
 </html>
 
 <script>
+    function avaliar() {
+        var dia = Number(inp_dia.value)
+        var i = 1;
+        var atividade1 = `Musculação`
+        var atividade2 = `Comer, Dormir, Etc`
 
-    function btn_calculo() {
-        var box = Number(selec_box.value);
-        var ate = Number(inp_ate.value);
-        var i = 0;
+        div_resultado.innerHTML = ''
 
-        while (i < ate){
-            
+        while (i <= 30) {
+            if (i % dia == 1) {
+                div_resultado.innerHTML += `Dia ${i} - ${atividade1} <br>`
+            } else {
+                div_resultado.innerHTML += `Dia ${i} - ${atividade2} <br>`
+            }
+            i++
         }
     }
 

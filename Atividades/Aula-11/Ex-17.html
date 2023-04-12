@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Carona</title>
+</head>
+
+<body>
+    <h1>Carona</h1>
+    Quantos vão entrar no carro:
+    <input type="text" id="inp_pessoa"><br>
+    Quantos lugares tem no carro:
+    <input type="text" id="inp_carro"><br>
+    <button onclick="validar()">#Partiu Carona</button>
+    <div id="div_resultado"></div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+</body>
+</html>
+
+<script>
+    function validar() {
+        var numero_pessoa = Number(inp_pessoa.value);
+        var numero_lugares = Number(inp_carro.value);
+        div_resultado.innerHTML += "";
+
+        div_resultado.innerHTML += "Entrou o 1º passageiro (que é o(a) motorista)<br>";
+        for (var i = 2; i <= numero_pessoa; i++){
+            if (i <= numero_lugares){
+                div_resultado.innerHTML += `Entrou o ${i}º passageiro<br>`
+            } else if (i > numero_lugares){
+                div_resultado.innerHTML += `O ${i}º passageiro terá que esperar!<br>`
+            }
+        }
+    }
+</script>
