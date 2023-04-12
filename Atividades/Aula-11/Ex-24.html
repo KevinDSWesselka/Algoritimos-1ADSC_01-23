@@ -21,8 +21,13 @@
 
 <script>
     function validar() {
-        var numer = Number(inp_numero.value);
+        var numero = Number(inp_numero.value);
 
-        for (i)
+        div_resultado.innerHTML = ` Divisores do Número ${numero}:<br>`
+        for (var i = 1; i <= numero; i++){
+            if(numero % i == 0){
+                div_resultado.innerHTML += i + "<br>";
+            }
+        }
     }
 </script>
