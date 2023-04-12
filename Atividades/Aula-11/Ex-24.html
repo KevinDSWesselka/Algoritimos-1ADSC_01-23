@@ -12,7 +12,7 @@
 <body>
     <h1>Carona</h1>
     Entre com um numero:
-    <input type="text" id="inp_deposito" placeholder="Entre 0 e 100"><br>
+    <input type="text" id="inp_numero" placeholder="Entre 0 e 100"><br>
     <button onclick="validar()">Ver Divisores</button><p/>
     <div id="div_resultado"></div><p/>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
@@ -21,21 +21,8 @@
 
 <script>
     function validar() {
-        var quantidade = Number(inp_deposito.value);
-        var valor = Number(inp_valor.value);
-        var total = valor;
-        var acrecimo = 0;
+        var numer = Number(inp_numero.value);
 
-        
-        div_resultado.innerHTML += `1º Mês: R$${valor} <p/>`;
-        for (var i = 2; quantidade >= i; i++){
-            acrecimo = (total + valor) * .01;
-            if (i % 3 == 0){
-                div_resultado.innerHTML += `${i}º Mês: R$ ${(total += valor + acrecimo).toFixed(2)}<img src="https://images.uncyc.org/pt/f/f0/Caipira.png" height="15px" alt=""><br>`;
-            } else{
-                div_resultado.innerHTML += `${i}º Mês: R$ ${(total += valor).toFixed(2)}<br>`;
-            }
-        }
-        div_resultado.innerHTML += `Total guardado: R$${(total).toFixed(2)}<br>`;
+        for (i)
     }
 </script>
