@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetição</title>
+</head>
+<body>
+
+    <h1>NÃO COLOCA NUMERO GRANDE CARA</h1>
+    Entre com o valor de ate onde ira contar:
+    <input type="text" id="inp_escolha" onchange="escolha()" placeholder="Insira o Valor" >
+    <div id="msg"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var contador = 5;
+
+    function escolha() {
+        
+        msg.innerHTML = ''
+        contador = 5;
+
+    while ( contador <= inp_escolha.value) {
+        msg.innerHTML += `<br/>Contando em ${contador}`;
+        contador++;
+    }
+}
+
+
+
+</script>

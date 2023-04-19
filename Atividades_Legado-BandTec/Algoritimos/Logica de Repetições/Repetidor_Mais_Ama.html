@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Repetidor do Amor </title>
+</head>
+<body>
+
+    <center>
+    <br/><br/>
+    <h2>Quanto você ama alguem!</h2>
+    Pessoa que você mais ama:
+    <input type="text" id="mais_ama" placeholder="Insira o nome da Pessoa amada">
+    <br/>
+    O Quanto você ama:
+    <input type="text" id="quanto_ama" placeholder="Insira o quanto você amaela">
+    <p/>
+    <button onclick="expressar()">Expressar Amor</button>
+    <p/>
+    <div id="mostrar"></div>
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    mostrar.innerHTML = '';
+    var contador = 1;
+
+    function expressar() {
+        while ( contador <= quanto_ama.value) {
+            mostrar.innerHTML += `<br/>${mais_ama.value} eu te amo, Sempre lembre disso!`;
+            contador++
+        }
+    }
+</script>

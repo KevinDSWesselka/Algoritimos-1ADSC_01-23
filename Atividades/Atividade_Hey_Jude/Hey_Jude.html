@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Hey Jude</title>
+</head>
+
+<body>
+    <h1>Hey Jude</h1>
+    Quantidade de takes:<input type="text" placeholder="Ex: 4" value="3" id="inp_takes"><br>
+    Quantidade de Padrão2:<input type="text" placeholder="Ex: 4" value="3" id="inp_padrao2">
+    <p />
+    <button onclick="simular_takes()">Simular</button>
+    <p /><br>
+    <p />
+    <div id="div_resultado">
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function simular_takes() {
+        var qnt_takes = Number(inp_takes.value);
+        var qnt_padrao2 = Number(inp_padrao2);
+        var qnt_nah = 0;
+        var nah_inicial = "nah, ";
+        var nah_seguintes = "Nah, ";
+        var hey_jude_nah = ""
+        div_resultado.innerHTML = "";
+
+        for (var i2 = 0; i2 < 8; i2++) {
+            nah_seguintes += nah_inicial
+            qnt_nah++
+        }
+
+        for (var i = 1; i <= qnt_takes; i++) {
+
+            hey_jude_nah += `Hey Jude, ${nah_seguintes}<br>`
+
+            div_resultado.innerHTML += `
+                <h2>Take ${i}</h2>
+                Hey, Jude, don't make it bad<br>
+                Take a sad song and make it better<br>
+                Remember to let her into your heart<br>
+                Then you can start to make it better<br>
+                Hey, Jude, don't be afraid<br>
+                You were made to go out and get her<br>
+                The minute you let her under your skin<br>
+                Then you begin to make it better<br>
+                And anytime you feel the pain, Hey, Jude, refrain<br>
+                Don't carry the world upon your shoulders<br>
+                For well you know that it's a fool<br>
+                Who plays it cool<br>
+                By making his world a little colder<br><p/> 
+
+                <span id="padrao_cores_nah">${nah_seguintes}</span><p/><br>
+
+                Hey, Jude, don't let me down<br>
+                You have found her, now go and get her<br>
+                Remember to let her into your heart<br>
+                Then you can start to make it better<br>
+                So let it out and let it in, Hey, Jude, begin<br>
+                You're waiting for someone to perform with<br>
+                And don't you know that it's just you, Hey, Jude, you'll do<br>
+                The movement you need is on your shoulder<br><p/>
+
+                <span id="padrao_cores_nah"></span><p/><br>
+
+                Hey, Jude, don't make it bad<br>
+                Take a sad song and make it better<br>
+                Remember to let her under your skin<br>
+                Then you'll begin to make it better, better, better, better, better... oh!<br>
+                <span id="padrao_cores_hey_jude">${hey_jude_nah}</span><p/><br>
+                `
+            if (i % 2 == 0) {
+                padrao_cores_nah.innerHTML = `<span style="color: red;">${nah_seguintes}</span>`;
+            }
+            if ((i % 2 == 1)) {
+                padrao_cores_hey_jude.innerHTML = `<span style="color: blue;">${hey_jude_nah}</span>`;
+            }
+        }
+
+    }
+
+</script>

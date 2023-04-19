@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda do Governo</title>
+</head>
+<body>
+
+    <H2>Verificar Renda para Ajuda do Governo.</H2>
+    
+    <input id="inpt_renda">
+    <input type="text" id="inpt_rendafamilia">
+
+    <button onclick="verificar()">Verificar Ajuda</button>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+
+        if ( inpt_renda.value <= 1050 && inpt_rendafamilia.value <= 2100){
+        alert ("Você terá direito!");
+        }
+        else {
+            alert  ("Você NÃO terá direito");
+        }
+        
+    }
+
+
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula30_resto_divisao</title>
+</head>
+
+<body>
+    <!-- 
+        % É usado para obter o resto da divisão entre dois números 
+        
+                      resto = num1 % num2;
+    -->
+
+    <h3>Cálculo do resto da Divisão</h3>
+    Entre com o primeiro número: <br>
+    <input id="ipt_num1" type="text"><br><br>
+    Entre com o segundo número: <br>
+    <input id="ipt_num2" type="text"> <br><br>
+    <button onclick="resto()">Qual o resto da Divisão entre esses dois números?</button> 
+
+</body>
+
+</html>
+<script>
+
+    function resto() {
+
+        //  O ALERT abaixo mostrará o resto da divisão entre os dois números entrados
+
+        var ax_num1 = Number(ipt_num1.value);
+        var ax_num2 = Number(ipt_num2.value);
+        alert(ax_num1 % ax_num2);
+        if (ax_num1 % ax_num2 == 0) {
+            alert ("é divisivel");
+        }
+    }
+
+    
+</script>

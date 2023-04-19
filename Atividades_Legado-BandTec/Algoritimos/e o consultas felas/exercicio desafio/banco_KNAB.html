@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="primeiro" style="display: block;">
+    <h1>Bem vindo ao banco KNAB</h1>
+    <br>
+    <h2>Simulação de empréstimos e investimentos</h2>
+    <br>
+    <h3>Entre com os dados da sua conta:</h3>
+    <br>
+    <input type="text" id="conta">
+    <input type="text" id="digito">
+    <input type="text" id="senha">
+    <br><br>
+    <button onclick="simular()">Simular</button>
+    </div>
+    <div id="segundo" style="display: none;">
+        <h1>O banco KNAB é sua melhor opção</h1>
+        <br>
+        <h2>Emprestimos e investimentos com as melhores taxas</h2>
+        <br>
+        <h3>Entre com os dados da sua simulação</h3>
+        <br>
+        Valor da Operação: <input type="text" id="valor">
+        <br>
+        <select id="operacao">
+            <option value="">Selecione a operação</option>
+            <option value="emprestimo">Emprestimo</option>
+            <option value="investimento">Investimento</option>
+        </select>
+        <select id="prazo">
+            <option value="">Selecione o prazo</option>
+            <option value="curto">Curto</option>
+            <option value="medio">Médio</option>
+            <option value="longo">Longo</option>
+        </select>
+        <br>
+        <button onclick="resultado()">Mostrar resultado</button><br><br>
+    </div>
+    <div id="terceiro" style="display: none;">
+    <div id="texto"></div>
+    <button onclick="retorno()">Retornar a Simulação</button><br><br>
+    </div>
+</body>
+</html>
+<script>
+    escrever=''
+    simulacao=0
+    function simular() 
+    {
+        var resto=Number(conta.value) % 11
+        if (Number(conta.value)!=0 && resto==Number(digito.value)) 
+        {
+            if (resto==0||resto==1||resto==2||resto==3 && senha.value=='manaus') 
+            {
+                    primeiro.style.display='none'
+                    segundo.style.display='block'
+            }
+            if (resto==4||resto==5||resto==6||resto==7 && senha.value=='recife') 
+            {
+                    primeiro.style.display='none'
+                    segundo.style.display='block'
+            }
+            if (resto==8||resto==9||resto==10 && senha.value=='fortaleza') 
+            {
+                    primeiro.style.display='none'
+                    segundo.style.display='block'
+            }
+        }
+        else 
+        {
+            alert('Os dados inseridos são invalidos')
+        }   
+    }
+    function resultado() 
+        {
+            segundo.style.display='none'
+            if (operacao.value=='emprestimo') 
+                {
+                    if (prazo.value=='curto') 
+                        {
+                            alert('Esta operação está condicionada ao seu perfil')
+                            simulacao ++
+                            var juros=Number(valor.value)*0.24
+                            var exibir=Number(valor.value)
+                            var conclusao=`Simulação ${simulacao}--Para o empréstimo de R$${exibir.toFixed(2)} no curto prazo será cobrado o juros de R$${juros.toFixed(2)} ao ano <br>`
+                            escrever=`${conclusao}`
+                            texto.innerHTML+=`${escrever}`
+                        }
+                    if (prazo.value=='medio') 
+                        {
+                            alert('Esta operação está condicionada ao seu perfil')
+                            simulacao ++
+                            var juros=Number(valor.value)*0.16
+                            var exibir=Number(valor.value)
+                            var conclusao=`Simulação ${simulacao}--Para o empréstimo de R$${exibir.toFixed(2)} no medio prazo será cobrado o juros de R$${juros.toFixed(2)} ao ano <br>`
+                            escrever=`${conclusao}`
+                            texto.innerHTML+=`${escrever}`
+                        }
+                    if (prazo.value=='longo') 
+                        {
+                            simulacao ++
+                            var juros=Number(valor.value)*0.10
+                            var exibir=Number(valor.value)
+                            var conclusao=`Simulação ${simulacao}--Para o empréstimo de R$${exibir.toFixed(2)} no longo prazo será cobrado o juros de R$${juros.toFixed(2)} ao ano <br>`
+                            escrever=`${conclusao}`
+                            texto.innerHTML+=`${escrever}`
+                        }
+                }
+            if (operacao.value=='investimento') 
+                {
+                    if (prazo.value=='curto') 
+                        {
+                            alert('Esta operação está condicionada ao seu perfil')
+                            simulacao ++
+                            var rendimento=Number(valor.value)*0.05
+                            var exibir=Number(valor.value)
+                            var conclusao=`Simulação ${simulacao}--Investindo R$${exibir.toFixed(2)} no curto prazo o seu rendimento será de R$${rendimento.toFixed(2)} ao ano <br>`
+                            escrever=`${conclusao}`
+                            texto.innerHTML+=`${escrever}`
+                        }
+                    if (prazo.value=='medio') 
+                        {
+                            alert('Esta operação está condicionada ao seu perfil')
+                            simulacao ++
+                            var rendimento=Number(valor.value)*0.08
+                            var exibir=Number(valor.value)
+                            var conclusao=`Simulação ${simulacao}--Investindo R$${exibir.toFixed(2)} no medio prazo o seu rendimento será de R$${rendimento.toFixed(2)} ao ano <br>`
+                            escrever=`${conclusao}`
+                            texto.innerHTML+=`${escrever}`
+                        }
+                    if (prazo.value=='longo') 
+                        {
+                            simulacao ++
+                            var rendimento=Number(valor.value)*0.12
+                            var exibir=Number(valor.value)
+                            var conclusao=`Simulação ${simulacao}--Investindo R$${exibir.toFixed(2)} no longo prazo o seu rendimento será de R$${rendimento.toFixed(2)} ao ano <br>`
+                            escrever=`${conclusao}`
+                            texto.innerHTML+=`${escrever}`
+                        }
+                    }
+                    terceiro.style.display='block'
+                }
+    function retorno() 
+    {
+        segundo.style.display='block'
+        terceiro.style.display='none'
+    }
+</script>

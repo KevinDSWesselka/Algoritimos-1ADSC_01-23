@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Nota 1: <input id="nota1" placeholder="digite a primeira nota">
+    Nota 2: <input id="nota2" placeholder="digite a segunda nota">
+    Nota 3: <input id="nota3" placeholder="digite a terceira nota">
+    
+    <button onclick="calcular()">calcular notas</button>
+     
+    
+</body>
+</html>
+<script>
+function calcular(){ 
+var nota_1 = Number(nota1.value)
+var nota_2 = Number(nota2.value)
+var nota_3 = Number(nota3.value)
+var média = (nota_1 + nota_2 + nota_3)/3
+alert ("sua nota é:" + média.toFixed(2))
+}
+</script>

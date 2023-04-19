@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qaul a sua idade</title>
+</head>
+<body>
+    
+    <center>
+    <p/><br/><p/><br/>
+        <h1>Vamos ver qual a sua epoca da vida!</h1>
+    <b>Qaul a sua idade:</b>
+    <input type="text" id="ipt_idade" placeholder="Insira sua Idade" onkeyup="infancia()">
+    <br/>
+    <div id="msg"></div>
+    </center>
+
+</body>
+</html>
+<script>
+    function infancia() {
+        msg.innerHTML = '';
+        var idade = ipt_idade.value;
+
+        for (var cont = 0; cont <= idade; cont++) {
+            if (cont <= 4) {
+                msg.innerHTML += `<br/>${cont} anos (Primeira Infância) <br/>`
+            }
+            else if (cont <= 6) {
+                msg.innerHTML += `<br/>${cont} anos (Pré-escolar) <br/>`
+            }
+            else if (cont <= 10) {
+                msg.innerHTML += `<br/>${cont} anos (Segunda Infância) <br/>`
+            }
+            else if (cont <= 18) {
+                msg.innerHTML += `<br/>${cont} anos (Adolescência) <br/>`
+            }
+            else if (cont <= 50) {
+                msg.innerHTML += `<br/>${cont} anos (Adulto) <br/>`
+            }
+            else if (cont <= 100) {
+                msg.innerHTML += `<br/>${cont} anos (Melhor idade) <br/>`
+            }
+            else {
+                msg.innerHTML += `${cont} anos (Matusalém) <br/>`
+            }
+        }
+    }
+</script>

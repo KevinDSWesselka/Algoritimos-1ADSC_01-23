@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliar Oportunidade</title>
+</head>
+<body>
+    
+    <h2>Analizar Dados de Oportunidade</h2>
+    <select name="Select" id="combo">
+        <option value="1">Dinheiro</option>
+        <option value="2">Cartão Debito</option>
+        <option value="3">Cartão Credito</option>
+        <option value="4">Boleto Bancario</option>
+    </select>
+
+    <button onclick="analize()"> Analizar Conta </button>
+
+</body>
+</html>
+
+<script>
+
+    function analize(){
+        if ( combo.value == '1' || combo.value == '2'){
+            alert ('Você ira pagar a Vista')
+        }
+        else {
+            alert ('Você ira pagar Parcelado')
+        }
+    }
+
+</script>

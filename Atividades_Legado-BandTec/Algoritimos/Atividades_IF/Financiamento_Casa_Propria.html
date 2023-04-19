@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Financiamento_Casa_Propria </title>
+</head>
+<body>
+ 
+    <h3> Financiamento Casa Propria </h3>
+    <input id="inp_renda" type="text" placeholder="Insira o valor da RENDA FAMILIAR">
+    <input id="inp_prestacao" type="text" placeholder="Insira o valor da PRESTACAO">
+
+    <button onclick="solicitar()"> Verificar financiamento </button>
+
+    <div id="div_mostrar"></div>
+
+</body>
+</html>
+
+<script>
+
+    function solicitar(){
+
+        var valor_prestacao = Number ((inp_renda.value) / Number (valor_prestacao.value) * 100).toFixed;
+
+    }
+
+</script>

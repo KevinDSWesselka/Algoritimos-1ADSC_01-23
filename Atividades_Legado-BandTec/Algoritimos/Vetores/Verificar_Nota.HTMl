@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Notas</title>
+</head>
+<body>
+    
+    <center>
+        <br/><p/><br/>
+        <h1>Vamos Verificar Notas</h1>
+        Insira o nome do aluno:
+        <input type="text" id="inp_nome" placeholder="Nome Aluno"><br/><p/>
+
+        Insira uma nota:
+        <input type="text" id="inp_nota" placeholder="Nota Aluno"><br/><p/>
+
+        Insira uma nota minima:
+        <input type="text" id="inp_nota_min" placeholder="Nota Minima"><br/><p/>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <button onclick="relatorio()">Ver Relatorio</button>
+        <button onclick="media()">Verificar Media</button><br/><p/>
+
+        <div id="mostrar" style="width: 380px;"></div>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    var vt_nota = []
+    var vt_aluno = []
+    var soma = 0;
+    var cont_notas = 0
+    
+
+    function cadastrar() {
+        var vt_nome = []
+        vt_nome.push(inp_nome.value)
+
+        var vt_nota = []
+        vt_nota.push(inp_nota.value)
+
+        for (var cont = 0; cont < vt_nota.length; cont++) {
+
+            soma += vt_nota[cont]
+
+            if ( Number (inp_nota.value) >= Number (inp_nota_min.value) ) {
+                vt_aluno.push(`O aluno <b>${vt_nome[cont]}</b> teve uma nota de ${vt_nota[cont]} <span style= "color: green;"> APROVADO </span>`)
+            }
+
+            else {
+               vt_aluno.push(`O aluno <b>${vt_nome[cont]}</b> teve uma nota de ${vt_nota[cont]}<span style="color: red;"> REPROVADO</span><br/>`) 
+            }
+            cont_notas++
+        }
+        console.log(vt_nome,vt_nota,vt_aluno,cont_notas)
+    }
+
+    function relatorio() {
+        
+        if (vt_aluno.length != -1){
+            mostrar.innerHTML = `${vt_aluno}`
+        }
+        
+        if ((inp_nota_min.value == '') || (inp_nota.value == '') || (inp_nome.value == '')){
+            alert('Favor entre com valores requisitados')
+        }
+
+        if ( (vt_aluno.length == '') ) {
+            alert('Favor entre cadastre os alunos')
+        }
+    }
+
+    function media() {
+    
+        var media_n = soma / cont_notas
+        mostrar.innerHTML = `A media foi ${media_n}`    
+
+    }
+    
+</script>

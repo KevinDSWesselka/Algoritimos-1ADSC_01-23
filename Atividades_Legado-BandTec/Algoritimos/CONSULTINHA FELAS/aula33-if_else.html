@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula27-if_else</title>
+</head>
+<body>
+    <h2>Aula 27 - IF ELSE - Cálculo de Multa</h2>
+    Entre com a quantidade de pontos da CNH 
+    <input id="ipt_pontos" placeholder="pontos CNH">
+    <br><br>
+    <button onclick="calcular()">Calcular Multa</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var ax_multa = 0;
+
+        // Em um comando IF-ELSE sempre ocorre que:
+        //     OU o bloco IF é executado
+        //     OU o bloco ELSE é executado
+        // JAMAIS,  em hipótese alguma, ambos serão executados,
+        // SEMPRE um dos dois é executado.    
+        if (ipt_pontos.value >= 20) {
+            alert ("Carteira suspensa");
+            ax_multa = ipt_pontos.value * 87;
+        } else {
+            ax_multa = ipt_pontos.value * 78;
+        }
+
+        // SEMPRE será executado o comando que está após o fechamento 
+        // de todas as chaves "}" de um IF-ELSE 
+        div_msg.innerHTML = `Valor total das multas é R$ ${ax_multa}`; 
+    }
+</script>

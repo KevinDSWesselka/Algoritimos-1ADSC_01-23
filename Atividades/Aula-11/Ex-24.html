@@ -13,20 +13,29 @@
     <h1>Carona</h1>
     Entre com um numero:
     <input type="text" id="inp_numero" placeholder="Entre 0 e 100"><br>
-    <button onclick="validar()">Ver Divisores</button><p/>
-    <div id="div_resultado"></div><p/>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore ipsum.
+    <button onclick="validar()">Ver Divisores</button>
+    <p />
+    <div id="div_resultado"></div>
+    <p />
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis obcaecati aliquid recusandae cupiditate deleniti
+    fugit iure ducimus quasi magnam impedit, voluptatem doloribus incidunt? Nam officia id minus voluptatem labore
+    ipsum.
 </body>
+
 </html>
 
 <script>
     function validar() {
         var numero = Number(inp_numero.value);
 
-        div_resultado.innerHTML = ` Divisores do Número ${numero}:<br>`
-        for (var i = 1; i <= numero; i++){
-            if(numero % i == 0){
-                div_resultado.innerHTML += i + "<br>";
+        if (Number(inp_numero.value) > 100 || Number(inp_numero.value) < 0) {
+            alert("Reveja os seus conceitos de imput")
+        } else {
+            div_resultado.innerHTML = ` Divisores do Número ${numero}:<br>`
+            for (var i = 1; i <= numero; i++) {
+                if (numero % i == 0) {
+                    div_resultado.innerHTML += i + "<br>";
+                }
             }
         }
     }

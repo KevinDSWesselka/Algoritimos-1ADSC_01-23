@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processo Celetivo</title>
+</head>
+<body>
+    
+    <h2> Processo Celetivo Mentes Brilhantes</h2>
+
+    <input type="text" id="nota" placeholder="Entre com a sua Nota">
+    <input type="text" id="notaenem" placeholder="Entre com a Nota do ENEM">
+
+    <button onclick="verificar()"> Avaliar</button>
+
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+    if (nota.value >= 700 || notaenem.value >= 800 ) {
+        alert ("Parabens você foi aprovado")
+    }
+    else {
+        alert ("Não foi dessa vez ")
+    }
+    }
+
+</script>

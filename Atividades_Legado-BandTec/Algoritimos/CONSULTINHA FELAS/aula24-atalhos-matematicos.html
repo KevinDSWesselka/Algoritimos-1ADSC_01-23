@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atalhos Matemáticos</title>
+</head>
+
+<body>
+    <!-- 
+        Os atalhos matemáticos servem para facilitar a digitação e leitura de código
+
+        Veja o seguinte exemplo:   ax_nota = ax_nota + 7;   Este comando está somando sete (7) na 
+        variável ax_nota e atribuindo o ax_resultadoado dessa soma para a variável ax_nota.
+
+        Agora veja o exemplo: ax_nota +=7;    Este comando faz a mesma coisa que o comando acima!!!!
+    -->
+
+    <h3>Vamos fazer contas mais facilmente??</h3>
+
+    <input id="numero" placeholder="Número qualquer" autofocus>
+    <br><br>
+
+    <button onclick="aumentar1()">Aumentar em 1</button>
+    <button onclick="reduzir1()">Reduzir em 1</button>
+    <button onclick="aumentar1simples()">Aumentar em 1 (método simples)</button>
+    <button onclick="reduzir1simples()">Reduzir em 1 (método simples)</button>
+    <button onclick="multiplicar()">Multiplicar por 3</button>
+    <button onclick="dividir()">Dividir por 3</button>
+</body>
+
+</html>
+<script>
+    function aumentar1() {
+        // neste caso estamos somando 1 no conteúdo do campo ax_resultado, mas poderia ser qualquer outro valor
+        var ax_resultado = Number(numero.value);
+        ax_resultado +=1;
+        alert (ax_resultado);
+    }
+    function reduzir1() {
+        // neste caso estamos subtraindo 1 no conteúdo do campo ax_resultado, mas poderia ser qualquer outro valor
+        var ax_resultado = Number(numero.value);
+        ax_resultado -=1;
+        alert (ax_resultado);      
+    }
+    function aumentar1simples() {
+        // neste caso estamos somando 1 no conteúdo do campo ax_resultado
+        var ax_resultado = Number(numero.value);
+        ax_resultado++;
+        alert (ax_resultado);
+    }
+    function reduzir1simples() {
+        // neste caso estamos subtraindo 1 no conteúdo do campo ax_resultado
+        var ax_resultado = Number(numero.value);
+        ax_resultado--;
+        alert (ax_resultado);
+    }
+    function multiplicar() {
+        // neste caso estamos alterando o conteúdo do ax_resultado para o triplo do seu valor
+        var ax_resultado = Number(numero.value);
+        ax_resultado *= 3;
+        alert (ax_resultado);
+    }
+    function dividir() {
+        // neste caso estamos alterando o conteúdo do ax_resultado para um terço do seu valor
+        var ax_resultado = Number(numero.value);
+        ax_resultado /= 3;
+        alert (ax_resultado);
+    }
+</script>

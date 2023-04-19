@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aco Pip </title>
+</head>
+<body>
+    
+    <center>
+    <br/><p/><br/><br/>
+    <h1>Aco Pip – AS MELHORES PIPOCAS DO BRASIL</h1>
+
+    <br/>
+    <b>Selecione o nosso tipo de Pipopca:</b>
+    <select onchange="sel_pipocaG()" id="produto">
+        <option value="selecione">Selecione uma Pipoca</option>
+        <option value="chocolate">Pipoca com Chocolate</option>
+        <option value="caramelo">Pipoca com Caramelo</option>
+    </select>
+    <p/>
+
+    <b>Selecione o nosso tipo de Embalagem:</b>
+    <select onchange="sel_pipocaE()" id="embalagem">
+        <option value="Selecione2">Selecione uma Embalagem</option>
+        <option value="Pequeno">Pacote Pequeno</option>
+        <option value="Grande">Pacote Grande</option>
+    </select>
+    <p/>
+
+    <b>Entre com a Quantidade:</b>
+    <input id="quantidade" placeholder="Insira a Quantidade">
+    <p/>
+
+    <b>Quantidade Adicional de Açúcar:</b>
+    <input id="quan_acucar" placeholder="Insira a quantidade Adicional de Açúcar">
+    <p/>
+    
+    <div id="div_tela">
+    <button onclick="verificar()">Verificar</button>
+
+    <button onclick="orcar()">Orçar</button>
+    <p/>
+    
+    <div id="div_mostrar"></div>
+    <div id="div_mostrar2"></div>
+    </div>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+
+        if ( quantidade.value < 500 ) {
+            div_mostrar.innerHTML = '<h2>Vendemos somente no atacado</h2><br/> <b>^Valor Negado^</b>'
+        }
+
+        else if ( quantidade.value > 5000 ) {
+            div_mostrar.innerHTML = '<h2>Consulte nosso PCP (planejamento e controle da produção)</h2> <b>Valor Negado</b>'
+        }
+
+        else if ( quantidade.value >= 500 || quantidade.value <= 5000 ) {
+            div_mostrar.innerHTML = '<h2>Quantidade de embalagens esta OK</h2>'
+        }
+
+        if ( quan_acucar.value <= 0 || quan_acucar.value > 8 ) {
+            div_mostrar2.innerHTML = '<h2>Quantidade adicional de açúcar invalida</h2> <b>^Valor Negado^</b>'
+        }
+
+        else if ( quan_acucar.value > 0 || quan_acucar.value < 8 ) {
+            div_mostrar2.innerHTML = '<h2>Quantidade adicional de açúcar esta OK</h2>'
+        }
+
+        
+        else if ( produto.value == selecione && embalagem.value == Selecione2) {
+            div_mostrar2.innerHTML = '<h2>Os produtos nao podem ser nulos</h2>'
+        }
+
+    }
+
+    function orcar() {
+        
+        //var caramelo_P = Number (quantidade.value * 1.10.toFixed);
+        //var chocolate_P = Number (quantidade.value * 1.20.toFixed);
+        //var caramelo_G = Number (quantidade.value * 1.70.toFixed);
+        //var cholocate_G = Number (quantidade.value * 1.80.toFixed);
+        //Não consegui encontrar uma boa logica a Tempo, me desculpe.
+        
+        div_tela.innerHTML = `
+        <b>Resumo do Orçamento</b><br/>
+        <b>Quantidade Solicitada:</b> ${quantidade.value} <br/>
+        <b>Embalagem Selecionada:</b> ${embalagem.value} <br/>
+        <b>Produto Selecionado:</b> ${produto.value} <br/>
+        <b>O Valor Total das Pipocas é de R$: EM MANUTENÇÃO</b>
+        <br/><p/>
+        <button onclick="Novo_Orcamento()">Novo Orçamento</button>
+        <button onclick="Comprar()">Comprar</button>` 
+    }
+
+    function Novo_Orcamento() {
+
+        div_tela.innerHTML = `
+        <p/>
+        <button onclick="verificar()">Verificar</button>
+        <button onclick="orcar()">Orçar</button>
+        <p/>
+        <div id="div_mostrar"></div>
+        <div id="div_mostrar2"></div>`
+    }
+
+    function Comprar() {
+
+        var al_num = Math.random();
+        var rando = Number (al_num * 1.25 + 3.25).toFixed(1);
+        var total = (rando * 500) / 100
+
+        div_tela.innerHTML = `
+        <h2>PARABÉNS!!!</h2>
+        <b>Você recebeu um bônus de ${total}<br/>
+        Na sua próxima compra você terá um bônus de R$ EM MANUTENÇÃO. </b><br/><p/>
+        <button onclick="finalizar()">Finalizar</button>`
+    }
+
+    function finalizar() {
+        div_tela.innerHTML = `
+        <p/>
+        <button onclick="verificar()">Verificar</button>
+        <button onclick="orcar()">Orçar</button>
+        <p/>
+        <div id="div_mostrar"></div>
+        <div id="div_mostrar2"></div>`
+    }
+
+</script>

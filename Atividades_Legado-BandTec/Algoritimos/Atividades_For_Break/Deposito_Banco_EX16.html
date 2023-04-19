@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar seus valores e lucros</title>
+</head>
+<body>
+
+    <center>
+    <p/><br/><p/><br/>
+        <h1>Verificar seus valores e lucros.</h1>
+    <b>Quantos depósitos você fez:</b>
+    <input type="text" id="ipt_deposito" placeholder="Insira seus depósitos">
+    <br/>
+    <b>Qual o valor dos depósitos:</b>
+    <input type="text" id="ipt_valor" placeholder="Insira o valor">
+    <p/>
+    <button onclick="varificar()">Calcular</button>
+    <div id="msg"></div>
+    </center>
+
+    
+</body>
+</html>
+<script>
+
+function varificar() {
+        var depositos = Number(ipt_deposito.value);
+        var valor = Number(ipt_valor.value);
+        var total = 0;
+        var bonus = 0;
+        msg.innerHTML = '';
+
+        for (var cont = 1; cont <= depositos; cont++) {
+            total += valor
+            if (cont % 3 == 0) {
+                total += total *0.01
+                msg.innerHTML += `${cont}º deposito: <spam style="color: rgb(167, 142, 4);"> R$ ${total.toFixed(2)}✮</spam> <br/>`;
+            }
+            else {
+                msg.innerHTML += `${cont}º deposito: R$ ${total.toFixed(2)} <br/>`;
+            }
+        }
+        msg.innerHTML += `<p/><b>Total guardado: <spam style="color: green;"> R$ ${total.toFixed(2)}</spam></b>`
+    }
+
+</script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos na Página</title>
+</head>
+
+<body>
+    <h2>Minha Calculadora Preferida!!!</h2>
+
+    <!-- 
+        As operações aritméticas são realizadas com os seguintes simbolos:
+        *   Multiplicação
+        /   Divisão
+        **  Exponenciação
+        -   Subtração
+        +   Soma
+
+        OBS: Para fazer a radiciação usamos a exponenciação com o expoente 1/índice. Poe exemplo: 
+        Para encontrar a raiz quadrada o índice é 2, então fazemos a exponenciação com expoente 1/2, 
+        Para encontrar a raiz cúbica o índice é 3, então fazemos a exponenciação com expoente 1/3 e 
+        assim sucessivamente
+        
+        #MUITA_ATENÇÃO - Na aula passada vimos que o sinal de + é usado para fazer a concatenação e 
+        agora estamos mostrando que a soma é feita com o mesmo sinal....    O Javascript fará a soma
+        somente quando os dois operandos forem realmente numéricos, caso contrário, o Javascript fará
+        a concatenação, portanto, quando que for usar campo de entrada em operação de adição SEMPRE
+        utilize a função Number(), onde a sintaxe é Number(campo_entrada.value)
+    -->
+
+    Entre com o primeiro número:
+    <input id="pri_num" type="text" placeholder="Primeiro Número"> <br><br>
+
+    Entre com o segundo número:
+    <input id="seg_num" type="text" placeholder="Segundo Número">
+    <br><br>
+
+    <button onclick="multiplicar()">Multiplicação</button>
+    <button onclick="dividir()">Divisão</button>
+    <button onclick="exponenciar()">Exponenciação</button>
+    <button onclick="raiz()">Radiciação</button>
+    <button onclick="subtrair()">Subtração</button>
+    <button onclick="somar()">Soma</button>
+    
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function multiplicar() {
+        // Observe que o cálculo PODE ser feito dentro da expressão na interpolação
+        div_msg.innerHTML += `<br>O resultado da multiplicação é: <b> 
+            ${pri_num.value * seg_num.value} </b>`;
+    }
+    function dividir() {
+        div_msg.innerHTML += `<br>O resultado da divisão é: <b> 
+            ${pri_num.value / seg_num.value} </b>`;
+    }
+    function exponenciar() {
+        div_msg.innerHTML += `<br>O resultado da exponenciação é: <b> 
+            ${pri_num.value ** seg_num.value} </b>`;
+    }
+    function raiz() {
+        div_msg.innerHTML += `<br>O resultado da radiciação é: <b> 
+            ${pri_num.value ** (1/seg_num.value)} </b>`;
+    }
+    function subtrair() {
+        div_msg.innerHTML += `<br>O resultado da subtração é: <b> 
+            ${pri_num.value - seg_num.value} </b>`;
+    }
+
+    /*
+    Para SOMAR, temos que, OBRIGATORIAMENTE, converter CADA UM dos campos em número
+    se não fizermos isso, os valores serão concatenados e não somados
+        
+    É POSSÍVEL invocar funções (como a Number) dentro de expressões na interpolação
+    */ 
+    function somar() {
+        div_msg.innerHTML += `<br>O resultado da soma é: <b> 
+            ${Number(pri_num.value) + Number(seg_num.value)} </b>`;
+    }
+
+</script>

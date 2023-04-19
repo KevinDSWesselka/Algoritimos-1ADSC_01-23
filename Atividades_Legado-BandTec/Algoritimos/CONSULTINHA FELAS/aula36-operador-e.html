@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 36 Operador E</title>
+</head>
+
+<body>
+  <!--
+      Um aluno da Bandtec para ser aprovado precisa de MEDIA >= 6 e FREQUENCIA >= 75
+      Faça um programa para identificar o alunos aprovados
+        a) receba a média e frequência do aluno
+        b) Se aprovado emitir um alert APROVADO!!!
+        c) se reprovado emitir um alert reprovado, tente novamente
+
+    -->
+    <h2>Média e Frequência dos alunos da BandTec</h2>
+    <input id="ipt_media" placeholder="Insira a Média" autofocus> <br><br>
+    <input id="ipt_frequencia" placeholder="Insira a Frequênca"> <br><br>
+    <button onclick="verificar()">Verificar</button>
+</body>
+
+</html>
+<script>
+  function verificar() {
+    var ax_media = ipt_media.value;
+    var ax_frequencia = ipt_frequencia.value;
+
+/* 
+  O teste abaixo - "media && frequencia" só será Verdadeiro quando as duas condições forem Verdadeiras ao mesmo tempo...
+  Basta uma condição ser falsa para a resposta ser falsa
+  Na primeira condição falsa, o teste com operador “e” é encerrado dando resposta falsa
+*/
+    if (ax_media >= 6 && ax_frequencia>=75) {
+      alert ("APROVADO!!!");
+    } else {
+      alert ("reprovado, tente novamente");
+    }
+  }
+</script>

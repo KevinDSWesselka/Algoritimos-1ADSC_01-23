@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio-9</title>
+</head>
+
+<body style="background-color: blueviolet;">
+    <!--
+        9. Crie um programa em HTML/JS o qual:
+
+a) Tenha um botão "Gerar uma nota de aluno entre 3 e 10" que faz aparecer, abaixo dele, a nota gerada
+
+b) Tenha um botão "Gerar uma frequência de aluno entre 50 e 100" que faz aparecer, abaixo dele, a frequência gerada
+
+c) Deixe todos os valores com 1 casa decimal na tela
+
+d) Ao clicar no botão “Aprovado?”, emitir um alerta com a situação desse aluno.
+
+ 
+    -->
+
+    <center>
+        <button onclick="nota()" style="background-color: cadetblue;">Gerar uma nota </button> <br> <br>
+        <button onclick="frequencia()" style="background-color: cadetblue;">Gerar uma frequência</button> <br> <br>
+        <button onclick="aprovado()" style="background-color: cadetblue;">Aprovado?</button>
+
+        <div id="div_msg"></div>
+    </center>
+
+    
+</body>
+
+</html>
+
+
+<script>
+     var ax_numNota = Math.random();
+     var totalNota = (ax_numNota *7) + 3;
+     var ax_num = Math.random();
+     var totalFreq = (ax_num * 50) + 50;
+
+
+    function nota() {
+       
+
+        div_msg.innerHTML += `Sua nota foi de ${totalNota.toFixed(1)} <br>`
+
+
+    }
+
+    function frequencia() {
+        
+
+        div_msg.innerHTML += `Sua frequencia foi de ${totalFreq.toFixed(1)} <br>`
+
+
+    }
+
+
+    function aprovado() {
+        
+
+        if (totalNota >=6 && totalFreq >=75) {
+            alert("Parabéns aprovado!")
+            
+        }
+
+        else {
+            alert("Reprovado!")
+
+
+        }
+
+
+
+    }
+
+   
+
+</script>

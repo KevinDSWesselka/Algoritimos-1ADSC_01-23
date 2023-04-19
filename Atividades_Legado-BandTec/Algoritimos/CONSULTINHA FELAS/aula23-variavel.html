@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos com Variável</title>
+</head>
+
+<body>
+    <h2>Minha Calculadora Preferida!!!</h2>
+<!-- 
+    Variável é um ponteiro para um espaço da memória que armazena temporariamente algum valor. 
+    As variáveis funcionam como campos ou áreas adicionais para armazenar algum valor.
+
+    EXEMPLO:        var nome_aluno = ‘Frizza’;     onde 
+        var ==> é como inicialmente iremos declarar as variáveis,
+        nome_aluno ==> é a identificação (nome) da variável e 
+        ‘Frizza’ ==> foi o valor atribuído para a variável nome_aluno
+
+    Regras para dar nome para as variáveis:
+        NÃO começar com número, mas pode ter número no meio ou fim
+        NÃO pode ter espaço em branco
+        NÃO usar nomes de tags (body, h3, img, div etc)
+        NÃO usar caracteres especiais (acentos, cedilha, etc)
+-->
+
+    Entre com o primeiro número:
+    <input id="primeiro_num" type="text" placeholder="Primeiro Número"> <br><br>
+
+    Entre com o segundo número:
+    <input id="segundo_num" type="text" placeholder="Segundo Número">
+    <br><br>
+
+    <button onclick="multiplicar()">Multiplicação</button>
+    <button onclick="dividir()">ax_divisaoão</button>
+    <button onclick="exponenciar()">Exponenciação</button>
+    <button onclick="raiz()">Radiciação</button>
+    <button onclick="subtrair()">Subtração</button>
+    <button onclick="somar()">Soma</button>
+    
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function multiplicar() {
+        // aqui eu criei a variável ax_num1 que recebeu o conteudo do campo de tela primeiro_num 
+        // depois criei a variável ax_num2 que recebeu o conteudo do campo de tela segundo_num 
+        // essas variáveis podem ser usadas várias vezes dentro da função que elas foram criadas
+        var ax_num1 = primeiro_num.value;
+        var ax_num2 = segundo_num.value;
+        div_msg.innerHTML += `<br>O resultado da multiplicação é: <b> 
+            ${ax_num1 * ax_num2} </b>`;
+    }
+    function dividir() {
+        // neste caso eu criei a variável ax_divisao que recebeu o resultado de uma operação
+        var ax_divisao = primeiro_num.value / segundo_num.value;
+        div_msg.innerHTML += `<br>O resultado da ax_divisaoão é: <b> 
+            ${ax_divisao} </b>`;
+    }
+    function exponenciar() {
+        div_msg.innerHTML += `<br>O resultado da exponenciação é: <b> 
+            ${primeiro_num.value ** segundo_num.value} </b>`;
+    }
+    function raiz() {
+        div_msg.innerHTML += `<br>O resultado da radiciação é: <b> 
+            ${primeiro_num.value ** (1/segundo_num.value)} </b>`;
+    }
+    function subtrair() {
+        div_msg.innerHTML += `<br>O resultado da subtração é: <b> 
+            ${primeiro_num.value - segundo_num.value} </b>`;
+    }
+    function somar() {
+        // Para variável ax_num1 é atirbuido o valor numérico do primeiro campo de entrada
+        var ax_num1 = Number(primeiro_num.value);
+        var ax_num2 = Number(segundo_num.value);
+        div_msg.innerHTML += `<br>O resultado da soma é: <b> 
+            ${ax_num1 + ax_num2} </b>`;
+    }
+
+</script>
+

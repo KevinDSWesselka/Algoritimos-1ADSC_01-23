@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--12. Crie um botão para avaliar o quão habilidoso o usuário é nos cliques.
+
+a) A tela deve ter o texto "Você já clicou 0 vezes"
+
+b) Ao clicar em "Clica neu", o contador do texto em a) aumenta. De 0 vai pra 1, depois pra 2, depois pra 3 e assim por diante
+
+c) Além de atualizar o contador, exiba umas dessas frases abaixo da frase em a)
+
+   "Dedo fraquinho, hein", enquanto clicou menos de 5 vezes
+   "Dedo bom, mano enquanto clicou entre 5 e 10 vezes
+   "Gosta de clicar, hein!", enquanto clicou entre 11 e 15 vezes
+   "Eita dedo nervoso!", enquanto clicou mais de 15 vezes-->
+</head>
+<body>
+
+    você ja clicou <b id="ipt_cliques">0</b> vezes <br><br>
+    
+    <button onclick="contar()">Clica neu</button> <br>
+    <button onclick="atualizar()">atualizar contador</button> <br>
+    
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+var ax_vezes = 0;
+
+function contar() {
+
+ax_vezes ++ ;
+
+}
+
+function atualizar(){
+
+    ipt_cliques.innerHTML= ax_vezes;
+
+if (ax_vezes < 5){
+ div_msg.innerHTML= `<br> <b> Dedo fraquinho, hein <b> <br>`;
+}
+else if (ax_vezes > 5 && 10){
+ div_msg.innerHTML= `<br> <b> Dedo bom, mano <b> <br>`; 
+}
+else if (ax_vezes >11 && 15){
+ div_msg.innerHTML= `<br> <b> Gosta de clicar, hein! <b> <br>`; 
+}
+if (ax_vezes >15){
+    div_msg.innerHTML= `<br> <b> Eita dedo nervoso! <b> <br>`; 
+}
+
+}
+</script>

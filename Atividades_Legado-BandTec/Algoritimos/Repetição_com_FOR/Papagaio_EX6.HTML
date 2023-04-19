@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papagaio</title>
+</head>
+<body>
+    
+    <p/><br>
+    <center>
+        <h3>O que o PAPAGAIO LORO vai dizer</h3>
+    Insira o valor das repetições:
+    <input id="valor" type="number" placeholder=" Insira o valor das repetições">
+    <br>
+    Insira a frase:
+    <input id="frase" type="text" placeholder=" Insira a frase">
+    <br>
+    <button onclick="papagaio()")>PAPAGAIO!!!</button>
+
+    <div id="msg"></div>
+    </center>
+
+
+</body>
+</html>
+
+
+<script>
+
+    function papagaio() {
+
+        for (var index = 1; index <= valor.value; index++) {
+
+            alert ( `O PAPAGAIO LORO N°${index} disse ${frase.value}`)
+
+            if ( index >= 10) {
+
+            alert (`O PAPAGAIO LORO esta FRENETICO`);
+            }
+
+            if ( index >= 20) {
+
+            alert (`O PAPAGAIO LORO diz -ORAOORAOROAROROAORA`);
+            }
+
+            if ( index >= 50) {
+
+            alert (`omae mou.... shindeiru`);
+
+            break
+            }
+        }
+
+    }
+
+</script>

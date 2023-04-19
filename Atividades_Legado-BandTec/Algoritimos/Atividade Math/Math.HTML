@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não sei um bom nome pra isso mas tem a ver com Math</title>
+</head>
+<body>
+    
+    <h1> Um time Paulista </h1>
+    <button onclick="verificar()">verificar</button>
+
+    <div id="mostrar">Time aleatorio</div>
+
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+
+        var al_num = Number ((Math.random() *3 + 1).toFixed());
+        if ( al_num == 1 ) {
+            mostrar.innerHTML =  '<br/> <img src="https://pbs.twimg.com/media/EmunoNVW4AEbFDV.jpg" style="height: 150px; width: 250px;"> '
+        }
+
+        else if ( al_num == 2 ) {
+            mostrar.innerHTML = '<br/> <img src="https://pbs.twimg.com/media/Emux3glXYAMijBi.jpg" style="height: 150px; widith width: 250px;"> '
+        }
+
+        else if ( al_num == 3 ) {
+            mostrar.innerHTML = '<br/> <img src=" https://i.pinimg.com/736x/b0/70/91/b07091942a884cee253bd12adda233bf.jpg" style="height: 150px; width: 250px;"> '
+        }
+
+        else if ( al_num == 4 ) {
+            mostrar.innerHTML = '<br/> <img src="https://i.pinimg.com/474x/de/3e/79/de3e799164145bcd21a41cb529ee1420.jpg" style="height: 150px; width: 250px;"> '
+        }
+    }
+
+</script>

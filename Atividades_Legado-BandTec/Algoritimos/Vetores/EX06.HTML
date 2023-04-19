@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 06</title>
+</head>
+<body>
+    
+    <center>
+        <br/><p/><br/>
+        <h1>Vamos ver qual filme favorito</h1>
+        Insira um filme:
+        <input type="text" id="inp_filme"><br/><p/>
+        <button onclick="cadastrar()">Cadastrar</button><br/><p/>
+
+        <span id="mostrar"></span>
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    function cadastrar() {
+        var vt_cadastrados = []
+
+        for ( var cont = 0; vt_cadastrados.length; cont++) {
+
+        vt_cadastrados.push (inp_filme.value)
+
+        mostrar.innerHTML += `${vt_cadastrados}<br/>`
+
+        }
+    }
+
+</script>

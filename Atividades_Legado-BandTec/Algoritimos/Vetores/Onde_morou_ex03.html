@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde Você Morou</title>
+</head>
+<body>
+    
+    <center>
+        <br/><p/><br/>
+        <h1>Vamos ver Onde você Morou</h1>
+        Insira onde você já morou:
+        <input type="text" id="inp_onde" placeholder="Entre com Onde morou">
+        <button onclick="cadas_onde()">Cadastrar</button><br/><p/>
+
+        Agora insira o NUMERO de você lembra que morou:
+        <input type="number" id="inp_relembra" style="width: 35px;">º<br/><p/>
+
+        <button onclick="relembrar()">Relembrar</button><br/><p/>
+
+        <span id="mostrar"></span>
+    </center>
+    
+</body>
+</html>
+
+<script>
+    
+    /*Vetor*/
+    var vt_cadas = [];
+
+    function cadas_onde() {
+        vt_cadas.push (inp_onde.value)
+        inp_onde.value = ''
+    }
+
+    function relembrar() {
+
+        mostrar.innerHTML += `${vt_cadas[inp_relembra.value -1]}<br/>`
+
+        if ( inp_relembra.value == vt_cadas.length[-1]) {
+            alert = `Você ainda não registrou que morou num ${numero}º bairro!`
+        }
+
+    }
+
+</script>

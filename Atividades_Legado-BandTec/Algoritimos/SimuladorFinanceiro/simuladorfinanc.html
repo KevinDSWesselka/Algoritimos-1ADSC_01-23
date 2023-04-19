@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+
+<!--Ajuste do Site do meio da Tela-->
+<body style="position: relative; width: 940px;margin: 0 auto; background-image: url('fundo.jpg'); " >
+    
+
+   
+   
+                                                        <!-- Logo do site, com o titulo -->   
+ <h1 style="display: inline;"> <img style="width: 200px;" src="Moon-removebg.png"> </h1>
+<h2 style="text-align: center;display: inline;margin-left: 100px;color: grey; " >Simulador Financeiro Moon Fox </h2><br><br><br>
+<span style="text-align: center; font-size: 18px;font-family: 'Times New Roman', Times, serif;" >Nosso simulador financeiro fará um calculo para você mostrando todos os benefícios que a Moon Fox poderá lhe oferecer, como uma boa economia de gastos para controle de temperatura do ambiente , tempo de operação de cada impressora que com nosso sistema poderá ser estendido consideravelmente, menos perca de material armazenado e menos perca de ABS na hora de impressão.</span><br><br>
+
+                                                        <!-- Bloco de contas(estilizado)  -->
+<div id="bloco_calculo" style="border: solid 1px;border-radius: 20px;width: 600px;height: 300px;margin: 0 auto;">
+<div> <h2 style="text-align: center;" > Cálculo mensal de beneficios do nosso sistema </h2></div>
+<div style="font-size: 16px;font-family:'Trebuchet MS', Arial, sans-serif ; padding-bottom: 9px;margin-left: 30px;" > Perda de ABS<span style="float: right;margin-right: 34px;" >Gastos com Resfriamento</span>  </div>
+<input id="ipt_percaABS" type="text" placeholder="Insira a porcentagem de perda" style="background-color:lightgray;border: solid 1px ;border-radius: 10px; width: 185px;height: 40px;text-align: center;margin-left: 20px;" >
+<span > <b>%</b> </span> <input id="ipt_gastoResfriamento" type="text" placeholder="Os gastos com resfriamentos" style="background-color:lightgray;border: solid 1px ;border-radius: 10px; width: 185px;height: 40px;text-align: center;float: right;margin-right: 30px;" ><span style="float: right;margin-top: 10px;" ><b style="padding-right: 5px;" >R$</b></span>
+<div style="font-size: 16px;font-family:'Trebuchet MS', Arial, sans-serif ; padding-top: 30px;padding-bottom: 5px;margin-left: 30px;" > Perda de Materiais    <span style="float: right;margin-right: 50px;" >Tempo de operação</span>  </div>
+                                                            <!-- Input estilizado -->
+<input id="ipt_perdademateriais" type="text" placeholder="Insira a porcentagem de perda" style="background-color:lightgray;border: solid 1px ;border-radius: 10px; width: 185px;text-align: center;margin-left: 20px;height: 40px;" > <span><b>%</b> </span>
+<input id="ipt_tempodeOperacoes" type="text" placeholder="Tempo de operação em horas" style="background-color:lightgray;border: solid 1px ;border-radius: 10px; width: 185px;text-align: center;height: 40px;float: right;margin-right: 30px;"><span><b style="float: right;margin-top: 11px;padding-right: 5px;" >Horas</b></span> <br><br>
+                                                        <!--Botão que acionará o Javascript-->
+<button onclick="calcular()" style="text-align: center;margin-left: 226px;border-radius: 20px;height: 40px;width: 150px;border: none;font-size: 18px;font-weight: bold;background: grey;cursor: pointer;"  >Calcular</button>
+
+
+
+</div><br><br>
+
+<div id="div_msg"></div>
+
+
+<!-- Um botão para limpar tudo e fazer denovo o calculo  -->
+
+<button onclick="recalcular()" style="display: none;text-align: center;border-radius: 20px;height: 40px;width: 150px;border: none;font-size: 18px;font-weight: bold;background: grey;cursor: pointer;margin-left: 210px;" id="bt_apaga" >Recalcular</button>
+
+</body>
+</html>
+
+
+<script>
+
+// A conta consiste em subtrair os valores recebidos no input com as variáveis de dados de empresa, Assim mostrando as vantagens do nosso serviço
+
+function calcular(){
+
+// Nomeando variáveis para os Inputs, Number pra transformar string em numero para não contatenar
+var perdaMateriais = Number(ipt_perdademateriais.value);
+var gastoResfriamento = Number(ipt_gastoResfriamento.value);
+var perdaABS = Number(ipt_percaABS.value);
+var tempoOperacao = Number(ipt_tempodeOperacoes.value);
+
+//  Variáves com os dados de de nossa empresa para os cálculos
+
+
+var TempoOperacaoMoonfox = (504) 
+var perdaABSMoonfox = Number(5)
+var GastosResfriamentoMoonfox =  (600)
+var perdaMateriaisMoonfox = Number(10)
+
+                       //Resultado que aparecerá na tela logo após o aperto do botão 
+div_msg.innerHTML =  ` <H2>Com os nossos serviços você terá essas vantagens:</H2><ul>
+                       <li style="font-size: 18px;"><span> O tempo de operação de sua impressora aumentará em <u><B>${TempoOperacaoMoonfox - tempoOperacao  } horas</B></u></span></li><br>  
+                      <li style="font-size: 18px;" > Suas perdas com ABS diminuirão em <u><B>${perdaABS - perdaABSMoonfox }%</B></u></li><br>
+                      <li  style="font-size: 18px;" >Com o nosso serviço você irá enconomizar <u><B>R$ ${  gastoResfriamento - GastosResfriamentoMoonfox  }</B></u></li><br>
+                      <li  style="font-size: 18px;" > Sua taxa de perda de materiais vai diminuir em <u><B>${perdaMateriais - perdaMateriaisMoonfox }%</B></u></li></ul> `  
+                      bt_apaga.style.display ="block"
+}
+
+
+function recalcular(){
+
+
+bt_apaga.style.display = "none"
+
+
+div_msg.innerHTML = ` `
+
+ipt_percaABS.value = ''
+ipt_perdademateriais.value = ''
+ipt_tempodeOperacoes.value = ''
+ipt_gastoResfriamento.value = ''
+
+
+
+
+
+
+
+
+}
+
+</script>

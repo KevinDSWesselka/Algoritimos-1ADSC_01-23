@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a temperatura? <input id="ipt_tempe" type="text">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var tempe = (ipt_tempe.value);
+
+        if (tempe<14 ){
+            msg.innerHTML += `Congelante <br>`;
+        }else if(tempe < 21){
+            msg.innerHTML += `Com frio <br>`;
+        }else if (tempe <24){
+            msg.innerHTML += `Cnfortável <br>`;
+        }else if (tempe <31){
+            msg.innerHTML += `Com Calor <br>`;
+        }else {
+            msg.innerHTML += `Calor escaldante <br>`;
+        }
+    }
+</script>

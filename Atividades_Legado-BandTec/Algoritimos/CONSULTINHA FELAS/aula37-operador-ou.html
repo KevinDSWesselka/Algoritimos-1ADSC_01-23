@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 37 Op. OU</title>
+</head>
+<body>
+    Qual o sabor de picolé? 
+    <select id="sel_sabor">
+        <option value="1">Espinafre</option>
+        <option value="2">Morango</option>
+        <option value="3">Feijoada</option>
+        <option value="4">Chocolate</option>
+        <option value="5">Terra&Tijolo</option>
+    </select>
+
+    <button onclick="picole()">Vou tomar o picolé?</button>
+</body>
+</html>
+<script>
+    function picole() {
+        var sabor = Number(sel_sabor.value);
+
+    // || -> Operador "OU". Nele, basta que 1 dos testes seja true (verdadeiro) que todo o teste dá true (verdadeiro)
+  
+        if (sabor == 2 || sabor == 4) {
+            alert("Oba, vou tomar o picolé! :)");
+        } else {
+            alert("Deu ruim,não gosto desse sabor :(");
+        }
+    }
+</script>

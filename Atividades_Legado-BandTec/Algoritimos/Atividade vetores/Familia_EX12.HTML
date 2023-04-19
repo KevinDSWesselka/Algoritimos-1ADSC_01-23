@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt=BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia e Felios</title>
+</head>
+<body>
+    
+    <center>
+        <br/><p/><br/>
+        <h1>Família e Felios</h1>
+        Insira o nome do seu Filho:
+        <input type="text" id="inp_filho"><br/><p/>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <button onclick="familia()">Atualizar Família</button><br/><p/>
+
+        <span id="mostrar"></span>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    var vt_nome = [];
+
+    function cadastrar() {
+        var vt_nome = []
+        console.log(vt_nome)
+
+        for (var cont = 0; cont < vt_nome.length; cont++) {
+
+            if ( inp_filho.value == vt_nome[vt_nome.indexOf] ) {
+                alert('Não pode aver mais de 1 filho com o mesmo nome!')
+            }
+            else {    
+            vt_nome.puch(inp_filho.value)
+            }
+
+        }
+
+    }
+
+</script>

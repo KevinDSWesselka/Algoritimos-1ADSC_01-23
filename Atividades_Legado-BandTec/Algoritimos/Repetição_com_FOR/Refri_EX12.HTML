@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrigerantes</title>
+</head>
+<body>
+    
+    <center>
+        <h3>Quantidade de Guarana</h3>
+        Informe a Quantidade de refrigerante:
+        <input type="text" id="quantidade" placeholder="Informe a Quantidade"><br>
+    </p>
+    </p>
+        <button onclick="verificar()">Ver a quantidade</button>
+
+
+        <div id="mostrar"></div>
+
+    </center>
+
+</body>
+</html>
+
+<script>
+
+
+
+    function verificar() {
+
+        for (var index = 0; index <= quantidade.value; index++) {
+            mostrar.innerHTML += `N°${index}<img src="https://http2.mlstatic.com/D_NQ_NP_676838-MLB47494830232_092021-V.jpg">`;
+        }
+
+    }
+
+</script>

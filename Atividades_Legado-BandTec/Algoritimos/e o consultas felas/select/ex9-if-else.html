@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução do Exercício 9 - If/Else</title>
+</head>
+<body>
+    
+    <select onchange="selecionarEspecie()" id="select_especie">
+        <option value="escolha">-Escolha uma Espécie-</option>
+        <option value="oviparos">Ovíparos</option>
+        <option value="mamiferos">Mamíferos</option>
+    </select>
+
+    <select onchange="selecionarOviparo()" id="select_oviparos" style="display: none">
+        <option value="escolha">-Escolha um Ovíparo-</option>
+        <option value="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia11604/galinha-caipira-cpt.jpg">
+            Galinha
+        </option>
+        <option value="https://www.universodoaquario.com.br/image/cache/catalog/peixes/corais/peixes-palhaco-ocellaris-p-900x900.jpg">
+            Peixe
+        </option>
+        <option value="https://cdn.diferenca.com/imagens/tartaruga-cagado-e-jabuti-og.jpg">
+            Tartaruga
+        </option>
+    </select>
+
+    <select onchange="selecionarMamifero()" id="select_mamiferos" style="display: none;">
+        <option value="escolha">-Escolha um Mamífero-</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/1200px-African_Bush_Elephant.jpg">
+            Elefante
+        </option>
+        <option value="https://s2.glbimg.com/DJ9TJliDtmrx3Mm52bPXPo7NIIs=/e.glbimg.com/og/ed/f/original/2021/01/06/pexels-barbara-barbosa-4636980.jpg">
+            Porco
+        </option>
+        <option value="https://www.dicaspetz.com.br/wp-content/uploads/2021/02/com-quantos-dias-os-filhotes-de-coelhos-comecam-a-comer-roedores.jpg">
+            Coelho
+        </option>
+    </select>
+
+    <div id="div_animal" style="display: none;">
+        <img style="height: 150px; width: 150px" id="img_animal" src="">
+        <br>
+        Valor de compra do animal: <input id="input_animal" type="text">
+        <br>
+        <button onclick="calcular()">Calcular Imposto</button>
+        <div id="div_resultado"></div>
+    </div>
+
+</body>
+</html>
+<script>
+
+    function esconderImagem() {
+        img_animal.src = "";
+        div_animal.style.display = "none";
+        input_animal.value = "";
+        div_resultado.innerHTML = "";
+    }
+     
+    function selecionarEspecie() {
+        var especieAtual = select_especie.value;
+
+        select_oviparos.style.display = "none";
+        select_mamiferos.style.display = "none";
+        esconderImagem();
+
+        if (especieAtual == "oviparos") {
+            select_oviparos.style.display = "block";
+        }
+        if (especieAtual == "mamiferos") {
+            select_mamiferos.style.display = "block";
+        }
+    }
+
+    function selecionarMamifero() {
+        var mamiferoAtual = select_mamiferos.value;
+
+        if (mamiferoAtual == "escolha") {
+            esconderImagem();
+        } else {
+            esconderImagem();
+            img_animal.src = mamiferoAtual;
+            div_animal.style.display = "block";
+        }
+    }
+    
+    function selecionarOviparo() {
+        var oviparoAtual = select_oviparos.value;
+
+        if (oviparoAtual == "escolha") {
+            esconderImagem();
+        } else {
+            img_animal.src = oviparoAtual;
+            div_animal.style.display = "block";
+        }
+    }
+
+    function calcular() {
+        var valorAnimal = Number(input_animal.value);
+        var especieAnimal = select_especie.value;
+        var resultado = 0;
+
+        if (especieAnimal == "oviparos") {
+            resultado = valorAnimal * 0.05;
+        } 
+        if (especieAnimal == "mamiferos") {
+            resultado = valorAnimal * 0.1;
+        }
+
+        div_resultado.innerHTML = "O imposto será de R$" + resultado;
+        div_resultado.innerHTML = `O imposto será de R$${resultado}`;
+    }
+
+</script>

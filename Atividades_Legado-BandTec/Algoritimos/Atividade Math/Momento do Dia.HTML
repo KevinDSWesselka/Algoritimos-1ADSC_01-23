@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortiar um Dia</title>
+</head>
+<body>
+    
+    <h1>Sortear momento</h1>
+    <button onclick="verificar()">Sortear momento do dia</button>
+    <br/>
+    <div id="mostrar">Momento do dia</div>
+
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        var al_num = Number ((Math.random() *23).toFixed());
+
+        if ( al_num >= 0 && al_num <= 11 ) {
+        mostrar.innerHTML = `Bom dia, flor do dia, são ${al_num}HRs` 
+        }
+
+        else if ( al_num >= 12 && al_num <= 17 ) {
+            mostrar.innerHTML = `Boa tarde, já vai tarde! São ${al_num}HRs` 
+        }
+
+        else if ( al_num >= 18 && al_num <= 23 ) {
+            mostrar.innerHTML = `Boa noite, durma bem! São ${al_num}HRs` 
+        } 
+    }
+
+</script>

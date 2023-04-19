@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Avaliação do peso de crianças de 5 anos</h1>
+    <br><br>
+    Digite o peso <input id="ipt_peso" type="text">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var peso = (ipt_peso.value);
+
+        if (peso<13.5 ){
+            msg.innerHTML += `Abaixo do peso <br>`;
+        }else if(peso < 21.2){
+            msg.innerHTML += `Peso na média <br>`;
+        }else if (peso > 21.2) {
+            msg.innerHTML += `Acima do peso <br>`;
+        }
+        
+        if (peso = 18.3){
+            msg.innerHTML += `Peso perfeito <br>`;
+        }
+    }
+</script>
+
+
+

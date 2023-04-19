@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositos</title>
+</head>
+<body>
+    
+    <center>
+        <h3>Verifiar Depositos</h3>
+        Informe quantidade de depositos bancarios:
+        <input id="quantidade_d" type="text" placeholder="Informe quantidade de depositos"><br>
+        Informeo valor dos depositos bancarios:
+        <input id="valor_d" type="text" placeholder="Informeo valor dos depositos"><p/>
+
+        <button onclick="verificar()">Acompanhar Grana</button>
+
+        <div id="msg"></div>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    msg.innerHTML = ``;
+
+    function verificar() {
+
+        if ( (quantidade_d.value <= 3 || quantidade_d.value >= 24) ||  valor_d.value < 1000) {
+                alert (`ERRO: Quantidade INVALIDA`);
+            }
+
+            else  {
+
+                var valor = Number (valor_d.value);
+                var deposito = Number (quantidade_d.value);
+                var total = Number (valor_d.value * quantidade_d.value);
+
+
+                for ( var index = 1; index <= deposito; index++) {
+
+                    var bonus = Number (index * valor * (0.01))
+
+                     if ( index % 3 == 0 ) {
+                        msg.innerHTML += `${index}- O valor atual é de $${(bonus) + index * valor}<br>`
+                    }
+
+                    else {
+                        msg.innerHTML += `${index}- O valor atual é de $${index * valor}<br>`
+                    }
+
+                }
+
+                msg.innerHTML += `O valor atual guardado é $${total}<br>`
+
+            }
+    }
+
+      
+</script>

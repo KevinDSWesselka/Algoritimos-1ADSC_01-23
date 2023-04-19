@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio-2</title>
+</head>
+<body style="background-color: blueviolet;">
+
+    <center>
+        <!--
+            13. Crie um programa em HTML/JS o qual:
+
+a) Ao clicar num botão "Sortear temperatura", sorteia valores reais entre -20 e +20 (intervalo fechado) e exibe uma frase como esta: "Temperatura sorteada: X"
+
+b) Exiba uma dessas mensagens abaixo da temperatura sorteada:
+
+    "Dá pra conservar qualquer alimento", se a temperatura for menor que 1
+    "Conserva a maioria dos alimentos", se a temperatura for entre 1 e 10
+
+    "Estraga a maioria dos alimentos", se a temperatura for maior que 10
+
+ 
+        --> <br>
+
+        <button onclick="sortear()" style="background-color: darkblue; color: darkgray;">Sortear temperatura</button> <br>
+        <div id="div_msg"></div>
+    </center>
+    
+</body>
+</html>
+
+<script>
+    function sortear(){
+        var ax_num = Math.random();
+        var total = (ax_num *40) + (-20);
+
+        if (total <1) {
+            div_msg.innerHTML += `Dá pra conservar qualquer alimento ${total.toFixed(2)} <br>`;
+            
+        } if (total >=1 && total <=10) {
+            div_msg.innerHTML += `Conserva a maioria dos alimentos ${total.toFixed(2)} <br>`;
+            
+        }
+
+        if (total >10) {
+            div_msg.innerHTML += `Estraga a maioria dos alimentos  ${total.toFixed(2)} <br>`;
+            
+        }
+
+        
+    }
+</script>

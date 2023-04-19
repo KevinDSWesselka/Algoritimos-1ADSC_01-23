@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Reembolso</title>
+</head>
+<body>
+
+    <h1>Controle de Reembolso de despeas com Locomoção</h1>
+    Entre com o valor do Reembolso:
+    <input type="number" id="inp_valor" placeholder="Insira o valor do reembolso">
+    <button onclick="btn_cadastrar()">Cadastrar</button><br/>
+    <p/>
+    <b>Total de reembolsos cadastrados = <span id="total_cad" style="color: rgb(0, 72, 167);"></span></b><br/>
+    <div id="div_mostrarA"></div>
+    <p/><br/><p/><br/>
+
+    <h2>Consulta dos Reembolsos</h2>
+    <b>Entre com o intervalo de valores a serem pesquisados:</b><br/>
+    de:
+    <input type="number" id="primeiro_va" placeholder="Insira o primeiro valor">
+    até:
+    <input type="number" id="segundo_va" placeholder="Insira o segundo valor">
+    <button onclick="btn_resumir()">Resumir intervalos</button><br/><p/>
+
+    <div id="div_mostrarB"></div>
+    <p/><br/>
+
+</body>
+</html>
+
+<script>
+
+    var vt_cadastrados = [];
+    var maior_valor = 0;
+    var menor_valor = 99999999999;
+    var var_cont = 0;
+
+    var verificar = false;
+    
+    function btn_cadastrar(){
+
+        console.log(vt_cadastrados)
+
+        for (var i = 0;inp_valor.value >= i; i++){
+            var_cont++
+            if (inp_valor.value >= 4 && inp_valor.value <= 16){
+                vt_cadastrados.push(inp_valor.value)
+                total_cad.innerHTML= `${vt_cadastrados.length}`
+                div_mostrarA.innerHTML = ``
+                div_mostrarB.innerHTML = ``
+                inp_valor.value = ''
+                verificar = true
+            }
+            else{
+                div_mostrarA.innerHTML = `Favor entre com um valor valido entre R$4.00 até R$16.00`;
+                inp_valor.value = ''
+                verificar = false
+            }
+        }   
+    }
+
+    function btn_resumir() {
+
+        if ((verificar == false)){
+            div_mostrarB.innerHTML = `Verifique se algo não foi inserido errado`
+        }
+
+        for (let i = 0; (inp_valor.value = i) ; i++) {
+        if(vt_cadastrados[i] > maior_valor){
+            maior_valor = vt_cadastrados[i]
+        } 
+        else if(vt_cadastrados[i] < menor_valor){
+            menor_valor = vt_cadastrados[i]
+        }
+        //Estou cometendo mais um erro besta de logica, desculpe//
+        }
+
+        div_mostrarB.innerHTML = `
+        O valor mais alto foi de: ${vt_cadastrados.indexOf(maior_valor)}<br/>
+        O valor mais baixo foi de: ${vt_cadastrados.indexOf(menor_valor)}<br/>
+        A media dos valores foi de ${vt_cadastrados.length / var_cont}`
+    }
+    
+
+</script>

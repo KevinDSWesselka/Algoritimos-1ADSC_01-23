@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arredondar toFixed</title>
+</head>
+<body>
+    <!-- 
+        Uma das formas que temos para arredondar números no Javascript é com .toFixed()
+        .toFixed(x) -> arredonda para x casas decimais
+
+        O .toFixed(x) cria um TEXTO a partir do número arredondado. Por Exemplo:
+            var numero = 7.9591 ;
+            numero.toFixed(2); // isso dá "7.96" (entre aspas mesmo, é um texto)
+
+        Portando, NÃO use o .toFixed(x) no meio de cálculos! Use apenas no final, 
+        no momento que for exibir o resultado final de um cálculo ao usuário.
+    -->
+    
+    <h2>Arredondando números</h2>
+
+    Número: <input id="in_numero">
+
+    <button onclick="arredondar()">Dividir por 3 e Arredondar</button>
+
+    <br><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+    function arredondar() {
+        var ax_divisao = Number(in_numero.value) / 3;
+        div_resultado.innerHTML = `O número informado foi: ${in_numero.value} <br>
+            Esse número divido por 3 dá: ${ax_divisao} <br>
+            Ele arredondado com duas casas decimais é: ${ax_divisao.toFixed(2)}`;
+    }
+</script>

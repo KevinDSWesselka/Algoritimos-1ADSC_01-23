@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Frutas</title>
+</head>
+<body>
+    
+    <center>
+        <br/><p/><br/>
+        <h1>Vamos ver qual fruta temos na lista</h1>
+        Insira uma fruta para verificarmos:
+        <input type="text" id="inp_fruta"><br/><p/>
+        <button onclick="fruta()">Pesquisar</button><br/><p/>
+
+        <span id="mostrar"></span>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    var n_temos = false
+    var n_temos2 = false
+    var n_temos3 = false
+    var n_temos4 = false
+
+    function fruta(){
+    var vetor = ['Baga','Pera','Manga','Banana'];
+
+        if ( vetor.indexOf (inp_fruta.value) == 0 ){
+            mostrar.innerHTML += `Temos BAGA!<br/>`
+            n_temos = false
+        }
+        else {
+            n_temos = true
+        }
+
+        if ( vetor.indexOf (inp_fruta.value) == 1 ){
+            mostrar.innerHTML += `Temos PERA!<br/>`
+            n_temos2 = false
+        }
+        else {
+            n_temos2 = true
+        }
+
+        if ( vetor.indexOf (inp_fruta.value) == 2 ){
+            mostrar.innerHTML += `Temos MANGA!<br/>`
+            n_temos3 = false
+        }
+        else {
+            n_temos3 = true
+        }
+
+        if ( vetor.indexOf (inp_fruta.value) == 3 ){
+            mostrar.innerHTML += `Temos BANANA!<br/>`
+            n_temos4 = false
+        }
+        else {
+            n_temos4 = true
+        }
+
+        if ( (n_temos == true) && (n_temos2 == true) && (n_temos3 == true) && (n_temos4 == true)) {
+            mostrar.innerHTML += `Não temos ${inp_fruta.value}<br/>`
+        }
+    }
+
+</script>

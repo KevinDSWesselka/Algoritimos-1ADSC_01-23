@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armin IF</title>
+</head>
+<body>
+   
+
+    <h3> Armin Tiroso </h3>
+    <input id="inp_latas" type="text" placeholder="Quantas latinhas">
+
+    <button onclick="calcular()"> Quantos Refris </button>
+
+    <div id="div_muda"></div>
+
+    
+
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        var Total_Ano = Number (inp_latas.value) * 365;
+
+        if  (Total_Ano >= 500){
+
+            div_muda.innerHTML= `<p/> A quantidade Total de refri por ano foi ${Total_Ano} unidades<br/>
+            Cuidado com a diabetes!!! `
+
+        }
+        else {
+            div_muda.innerHTML=`</p>A quantidade Total de refri por ano foi ${Total_Ano}` 
+        }
+
+    }
+
+</script>

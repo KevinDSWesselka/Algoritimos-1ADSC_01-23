@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turfe Amigo</title>
+</head>
+<body>
+    
+    <center>
+    <h1>Turfe Amigo</h1>
+    <b>Escolha seus cavalos e vamos correr!</b>
+    <p/>
+    Escolha o nome do cavalo numero 1:
+    <input id="inp_cavalo1" type="text" placeholder="Insira o nome do cavalo">
+    <br/>
+    Escolha o nome do cavalo numero 2:
+    <input id="inp_cavalo2" type="text" placeholder="Insira o nome do cavalo">
+    <br/>
+    Escolha o nome do cavalo numero 3:
+    <input id="inp_cavalo3" type="text" placeholder="Insira o nome do cavalo">
+    <br/>
+    Escolha o nome do cavalo numero 4:
+    <input id="inp_cavalo4" type="text" placeholder="Insira o nome do cavalo">
+    <p/><p/>
+
+    <button onclick="bora()" >CORRER!!!</button>
+    <p/>
+
+    <div id="mostrar"></div>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    
+
+    mostrar.innerHTML = ``;
+    var contador = 1;
+    var aleatorio1 = (Math.random () *2 + 7).toFixed(1);
+    var aleatorio2 = (Math.random () *2 + 7).toFixed(1);
+    var aleatorio3 = (Math.random () *2 + 7).toFixed(1);
+    var aleatorio4 = (Math.random () *2 + 7).toFixed(1);
+
+    var menor_tempo = 0;
+    var maior_tempo = 0;
+
+    var acumulado = (aleatorio1 + aleatorio2 + aleatorio3 + aleatorio4);
+
+    function bora() {
+
+        var cavalo1 = inp_cavalo1.value;
+        var cavalo2 = inp_cavalo2.value;
+        var cavalo3 = inp_cavalo3.value;
+        var cavalo4 = inp_cavalo4.value;
+
+        while ( contador <= 7) {
+
+            
+            if (contador < 7) {
+                mostrar.innerHTML = `
+                 O grandioso cavalo <b>${inp_cavalo1.value}</b> teve um incrivel
+                 tempo de <b>${aleatorio1} Segundos!!!</b> 
+                 <br/>
+                 O grandioso cavalo <b>${inp_cavalo2.value}</b> teve um incrivel
+                 tempo de <b>${aleatorio2} Segundos!!!</b>
+                 <br/>
+                 O grandioso cavalo <b>${inp_cavalo3.value}</b> teve um incrivel
+                 tempo de <b>${aleatorio3} Segundos!!!</b>
+                 <br/>
+                 O grandioso cavalo <b>${inp_cavalo4.value}</b> teve um incrivel
+                 tempo de <b>${aleatorio4} Segundos!!!</b>
+                 <br/>
+                 `
+            }
+
+            //ESTOU TENTNADO RESOLVER A QUESTÃO DO ACUMULO E DAS VOLTAS....
+            //AINDA NÃO CHEGUEI A PENSSAR NA SOLUÇÃO PARA AS POSIÇÕES....
+
+            ++contador
+        }
+
+    }
+    
+    
+</script>

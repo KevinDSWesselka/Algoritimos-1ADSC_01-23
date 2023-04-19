@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato bancario</title>
+</head>
+<body>
+    
+    <center>
+        <br/><p/><br/><p/>
+        <h1>Dados Bancarios</h1>
+    Entre com seu Nome:
+    <input type="text" id="inp_nome" placeholder="Insira o seu Nome"><br/>
+
+    Entre com o Numero da sua Agencia:
+    <input type="text" id="inp_numeroA" placeholder="Insira a sua Agencia"><br/>
+
+    Entre com a sua Conta:
+    <input type="text" id="inp_conta" placeholder="Insira o numero da Conta"><br/>
+
+    Entre com o seu digito:
+    <input type="text" id="inp_digito" placeholder="Insira o seu Digito"><br/><p/>
+
+
+    <button onclick="verificar()">Verificar Dados</button><br/><p/>
+    <div class="mostrar"></div>
+    </center>
+
+</body>
+</html>
+
+
+<script>
+
+    function verificar() {
+
+        var nome = inp_nome.value
+
+        if ( nome.length < 3 ) {
+            alert ('ERRO: Nome deve conter no minimo 3 caracteres');
+        }
+
+        if ( !((inp_numeroA.value != 001) && (inp_numeroA.value != 102) && (inp_numeroA.value != 237) && (inp_numeroA.value != 341)) ) {
+            alert ('ERRO: Agencia Bancaria invalido');
+        }
+
+        if ( inp_conta < 0 && inp_conta > 999) {
+            alert ('ERRO: Numero da Conta Bancaria invalido')
+        }
+
+        var resto11 = inp_digito.value % 11;
+        var resto10 = resto11 % 10;
+
+        if ( inp_digito.value != resto10 ){
+        alert ('ERRO: Digito Bancario invalido')
+        }
+
+        alert('Validado... Carregando Extrato')
+    }
+
+</script>

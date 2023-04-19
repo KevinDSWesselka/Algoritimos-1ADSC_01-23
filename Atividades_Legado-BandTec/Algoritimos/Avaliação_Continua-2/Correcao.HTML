@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção AcoPip</title>
+</head>
+<body>
+    
+    <center>
+    <br/><p/><br/><br/>
+    <h1>Aco Pip – AS MELHORES PIPOCAS DO BRASIL</h1>
+
+    <br/>
+    <b>Selecione o nosso tipo de Pipopca:</b>
+    <select onchange="sel_pipocaG()" id="produto">
+        <option value="selecione">Selecione uma Pipoca</option>
+        <option value="chocolate">Pipoca com Chocolate</option>
+        <option value="caramelo">Pipoca com Caramelo</option>
+    </select>
+    <p/>
+
+    <b>Selecione o nosso tipo de Embalagem:</b>
+    <select onchange="sel_pipocaE()" id="embalagem">
+        <option value="Selecione2">Selecione uma Embalagem</option>
+        <option value="Pequeno">Pacote Pequeno</option>
+        <option value="Grande">Pacote Grande</option>
+    </select>
+    <p/>
+
+    <b>Entre com a Quantidade:</b>
+    <input id="quantidade" placeholder="Insira a Quantidade">
+    <p/>
+
+    <b>Quantidade Adicional de Açúcar:</b>
+    <input id="quan_acucar" placeholder="Insira a quantidade Adicional de Açúcar">
+    <p/>
+
+    <div id="div_tela">
+    <button onclick="orcar()">Orçar</button>
+    <p/>
+    
+    <div id="div_mostrar"></div>
+    <div id="div_mostrar2"></div>
+    </div>
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    function orcar() {
+
+        if ( quantidade.value < 500 ) {
+            alert  ('Vendemos somente no atacado ^ERRO:Valor Negado^')
+        }
+
+        else if ( quantidade.value > 5000 ) {
+            div_mostrar.innerHTML = '<h2>Consulte nosso PCP (planejamento e controle da produção)</h2> <b>ERRO:^Valor Negado</b>'
+        }
+
+        if ( quan_acucar.value <= 0 || quan_acucar.value > 8 ) {
+            alert ('Quantidade adicional de açúcar invalida ^ERRO:Valor Negado^')
+        }
+        if ( produto.value == 'selecione' || embalagem.value == 'Selecione2') {
+            div_mostrar2.innerHTML = '<h2>Selecione o Produto</h2> <b>^ERRO:Valor Negado^</b>'
+        }
+
+        //Resolver priemiro o &&
+        if ( quan_acucar.value > 0 && quan_acucar.value < 8 || quantidade.value >= 500 && quantidade.value <= 5000 ||
+        produto.value == 'Pequeno' && embalagem.value == 'chocolate') {
+            
+        div_tela.innerHTML = `
+        <b>Resumo do Orçamento</b><br/>
+        <b>Quantidade Solicitada:</b> ${quantidade.value} <br/>
+        <b>Embalagem Selecionada:</b> ${embalagem.value} <br/>
+        <b>Produto Selecionado:</b> ${produto.value} <br/>
+        <b>O Valor Total das Pipocas é de R$: ${quantidade.value * 1.20}</b>
+        <br/><p/>
+        <button onclick="Novo_Orcamento()">Novo Orçamento</button>
+        <button onclick="Comprar()">Comprar</button>`
+        }
+    }
+
+    function Novo_Orcamento() {
+
+        div_tela.innerHTML = `
+        <p/>
+        <button onclick="orcar()">Orçar</button>
+        <p/>
+        <div id="div_mostrar"></div>
+        <div id="div_mostrar2"></div>`
+    }
+
+</script>

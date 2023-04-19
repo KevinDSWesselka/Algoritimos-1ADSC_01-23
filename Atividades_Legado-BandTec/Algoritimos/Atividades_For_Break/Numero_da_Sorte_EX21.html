@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+    <p/><br/><p/><br/>
+        <h1>Vamos ver qual seu numero da sorte!</h1>
+    Qual seu número da sorte:
+    <input type="text" id="numero_da_sorte" placeholder="Insira um valor de 0 a 100">
+    <br><p/>
+    <button onclick="verificar()">valendo!</button>
+    </center>
+
+</body>
+</html>
+<script>
+    function verificar() {
+        var numero = numero_da_sorte.value
+
+        if ( numero == ''){
+                alert ('Favor informar um valor de 0 a 100.')
+            } 
+
+        else {
+
+        for (var cont = 1; ; cont++) {
+            var alet = Number((Math.random()*100).toFixed());
+            if (alet == numero) {
+                alert (`Foram necessários ${cont} sorteios`)
+                break
+            }    
+        }
+    }
+        numero.value = ''
+    }
+</script>

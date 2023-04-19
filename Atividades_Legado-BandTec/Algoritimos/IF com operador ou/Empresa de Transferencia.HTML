@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de Preferencia</title>
+</head>
+<body>
+
+    <center>
+    <h1>Ver lisa de prefencia de Estagio</h1>
+    
+    <input type="text" id="empresa" placeholder="Insira a Empresa">
+    <input type="text" id="refeicao"placeholder="Insira o seu VR">
+    <input type="text" id="bolsa" placeholder="Insia a sua Bolsa">
+    <input type="text" id="deslocamento" placeholder="Insira o tempo de transporte">
+    <p/>
+    <button onclick="calcular()">É Preferida?</button>
+    <p/>
+    <div id="pagina"></div>
+    </center>
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        if ( refeicao.value >= 20 || bolsa.value >= 1800 || deslocamento.value <= 30){
+            pagina.innerHTML = `A ${empresa.value} é sua preferencia`
+        }
+        else{
+             pagina.innerHTML = `A ${empresa.value} esta fora da sua lista `
+        }
+    }
+</script>

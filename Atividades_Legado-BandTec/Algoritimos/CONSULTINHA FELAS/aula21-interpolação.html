@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpolação</title>
+</head>
+
+<body>
+    <h2>Input com interpolação</h2>
+    Entre com o seu <b> primeiro nome: </b>
+    <input id="primeiro" type="text" placeholder="primeiro nome">
+    <br>
+    Entre com o seu <b> último nome: </b>
+    <input id="ultimo" type="text" placeholder="Último Nome"  >
+    <br>
+    <button onclick="incluir()" style="background: red; color: green;">Incluir</button>
+    <br>
+    <div id="div_mens">
+        <h3>Mini Cadastro de Nome</h3>
+        <u>Seu nome é:</u>  <br> <br>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function incluir() {
+        
+        // aqui usamos a INTERPOLAÇÃO!
+        // iniciamos e finalizamos o texto com CRASE! Usamos ${} para colocar a parte dinamica, 
+        // ou seja EXPRESSÕES (ex: valor de um campo)
+        div_mens.innerHTML += `O primeiro é: ${primeiro.value} o segundo é: <b> ${ultimo.value} </b>`;
+        primeiro.value = '';
+        ultimo.value = '';
+    }
+
+</script>

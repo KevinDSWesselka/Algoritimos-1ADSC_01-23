@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="nota_1()">nota 1</button>
+    <button onclick="nota_2()">nota 2</button>
+    <button onclick="nota_3()">nota 3</button>
+
+     Sua nota foi: <span id="span_nota"></span>
+     A média é: <span id="span_media"></span>
+</body>
+</html>
+<script>
+
+var ax_nota = 0;
+var ax_quantidade = 0;
+
+function nota_1() {
+
+ax_nota +=1;
+
+ax_quantidade ++;
+
+span_nota.innerHTML = "1"
+span_media.innerHTML = ax_nota / ax_quantidade;
+
+}
+
+function nota_2() {
+
+ax_nota +=2;
+
+ax_quantidade ++;
+
+span_nota.innerHTML = "2"
+span_media.innerHTML = ax_nota / ax_quantidade;
+
+}
+
+
+function nota_3() {
+
+ax_nota +=3;
+
+ax_quantidade ++;
+
+span_nota.innerHTML = "3"
+span_media.innerHTML = ax_nota / ax_quantidade;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

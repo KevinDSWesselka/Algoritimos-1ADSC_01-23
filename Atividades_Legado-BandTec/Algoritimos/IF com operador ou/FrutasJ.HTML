@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas da Julia</title>
+</head>
+<body>
+    
+    <h2>A Julia só comer abacaxi e uva</h2>
+    <input type="text" id="Fruta" placeholder="Qual fruta ela comer">
+    <button onclick="Butt()">Vai COMER !?!</button>
+
+
+
+</body>
+</html>
+
+<script>
+
+    function Butt(){
+        if (Fruta.value == 'uva' || Fruta.value == 'abacaxi'){
+            alert (`Ela vai comer ${Fruta.value}`)
+        }
+        else (
+            alert ("Ela tem frescura")
+        )
+    }
+
+</script>

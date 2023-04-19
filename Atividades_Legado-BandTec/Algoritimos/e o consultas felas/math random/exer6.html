@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>exercicio-6</title>
+</head>
+
+<body>
+    <!--
+        6. Crie um programa em HTML/JS o qual:
+
+a) Ao clicar num botão "Sortear momento do dia". Esse botão vai gerar uma hora aleatória entre 0 e 23 (apenas números inteiros).
+
+b) Em seguida, mostre na tela uma dessas frases:
+
+"Bom dia, flor do dia, são Xh!" (caso o horário for entre 0 e 11)
+
+"Boa tarde, já vai tarde! São Xh!" (caso o horário for entre 12 e 17)
+
+"Boa noite, durma bem! São Xh!" (caso o horário for entre 18 e 23)
+
+ 
+    -->
+
+
+    <button onclick="analisar()">Sortear momento do dia</button>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var ax_num = Math.random();
+        var total = (ax_num * 24).toFixed();
+
+        if (total >= 0 && total <= 11) {
+            div_msg.innerHTML = `Bom dia, flor do dia, são ${total}! <br>`
+
+
+        } if (total >= 12 && total <= 17) {
+            div_msg.innerHTML = `Boa tarde, já vai tarde! São ${total}! <br>`
+
+
+        } else if (total >= 18 && total <= 23) {
+            div_msg.innerHTML = `Boa tarde, já vai tarde! São ${total}!  <br>`
+
+
+        }
+
+
+    }
+</script>

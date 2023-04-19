@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <br/><br/>
+        <h1>De quanto em quanto Tepo Treinar</h1>
+        De quanto em quantos dias você Malha:
+        <input type="text" id="tempo_malha" placeholder="insira dias que você Malha">
+        <p/>
+        <button onclick="butt_rotina()">Exibir rotina mensal</button>
+    
+        <div id="mostrar"></div>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+
+        function butt_rotina(){
+            
+            mostrar.innerHTML = ``;
+            var contador = 1;
+            var malhando = Number (tempo_malha.value)
+
+            while ( contador <= 30 ) {
+                
+                if ( contador % malhando == 0 ) {
+                    mostrar.innerHTML += `<br/>${contador}- Musculação, Treino.`;
+                }
+                else {
+                    mostrar.innerHTML += `<br/>${contador}- Comer, dormir, etc.`; 
+                }
+             contador++
+            }
+        }
+
+</script>

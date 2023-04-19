@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetição dos Numeros Pares</title>
+</head>
+<body>
+
+    <h1>NÃO COLOCA NUMERO GRANDE CARA</h1>
+    Insira os valores para mostrar os impares e os pares:<p/>
+    <input type="text" id="escolha" placeholder="Insira o Valor" >
+    <input type="text" id="escolha2" placeholder="Insira o Valor 2" >
+    <button onclick="butt()">Aperta</button>
+    <div id="msg"></div>
+    
+</body>
+</html>
+
+
+<script>
+
+    function butt() {
+        
+        msg.innerHTML = '';
+
+        var inicial = Number(escolha.value);
+        var final = Number(escolha2.value);
+        
+    while ( inicial <= final) {
+
+        if (inicial%2 == 0) {
+            msg.innerHTML += `<br/> O valor ${inicial} é par!`
+        }
+        inicial++
+    }
+}
+
+</script>

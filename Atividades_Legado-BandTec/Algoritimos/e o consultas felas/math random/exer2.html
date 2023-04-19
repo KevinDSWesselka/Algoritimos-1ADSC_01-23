@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio-2</title>
+</head>
+
+<body>
+    <!--
+        2. Crie um programa em HTML/JS o qual:
+
+a) Ao clicar no botão "Sortear time", faz aparecer somente um dos escudos dos 4 times de futebol de maior torcida do estado de São Paulo. Independente da imagem, todas devem ter 150px de altura.
+    -->
+
+    <button onclick="sortear()">Sortear time</button>
+    <br><br><br>
+
+    <img id="img_escudo" style="height: 150px;" src="" alt="">
+
+    <br><br><br>
+    <div id="div_msg"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function sortear() {
+        var ax_num = Math.random();
+        var total = (ax_num * 3 + 1).toFixed(0);
+
+
+        if (total == 1) {
+            img_escudo.src = `https://a.espncdn.com/i/teamlogos/soccer/500/2026.png `;
+            div_msg.innerHTML += `O time sorteado foi Sao Paulo <br>`;
+
+
+        } else if (total == 2) {
+            img_escudo.src = `https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png `;
+            div_msg.innerHTML += `O time sorteado foi Santos <br>`;
+        }
+        else if (total == 3) {
+            img_escudo.src = `https://www.minhatorcida.com.br/imagens/post/11608/750xNxcapa-palmeiras.jpg.pagespeed.ic.bc111a3251.jpg `;
+            div_msg.innerHTML += `O time sorteado foi Palmeiras <br>`;
+        }
+        else if (total == 4) {
+            img_escudo.src = `https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg`;
+            div_msg.innerHTML += `O time sorteado foi Corinthians <br>`;
+
+        }
+
+
+    }
+</script>

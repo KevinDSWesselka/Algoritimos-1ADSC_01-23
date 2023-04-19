@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula35_else_if</title>
+</head>
+
+<body>
+    <h3>Analise do Saldo das contas</h3>
+    Entre com o nome e o saldo do cliente:
+    <input id="ipt_nome" type="text" placeholder="Nome do Cliente">
+    <input id="ipt_saldo" type="text" placeholder="Saldo no Banco">
+    <br><br>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var ax_saldo = Number(ipt_saldo.value);
+        if (ax_saldo < 0) {
+            div_msg.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ipt_nome.value} está com saldo devedor`;
+        } else if (ax_saldo <= 2000) {
+            div_msg.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ipt_nome.value} está com saldo NORMAL`;
+        } else if (ax_saldo <= 5000) {
+            div_msg.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ipt_nome.value} está com saldo ACIMA DA MÉDIA`;
+        } else {
+            div_msg.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ipt_nome.value} TEM PERFIL DE INVESTIDOR`;
+        }
+    }
+</script>

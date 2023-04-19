@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 34 else_if</title>
+</head>
+
+<body>
+    <h2>Controle de atacantes</h2>
+    Informe a quantidade de Partidas:
+    <input id="ipt_partidas" autofocus> <br><br>
+    Informe a quantidade de Gols:
+    <input id="ipt_gols"> <br><br>
+    <button onclick="estudar()">Estudar Atacante</button> <br><br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function estudar() {
+        var ax_media = ipt_gols.value / ipt_partidas.value;
+        if (ax_media > 0.6) {
+            div_msg.innerHTML = `Atacante de futuro`;
+        } else if (ax_media < 0.2) {
+            div_msg.innerHTML = `Mudar de posição`;
+        } else {
+            div_msg.innerHTML = `Atacante Mediano`;
+        }
+        
+        div_msg.innerHTML += `<br><br>Sua média de gols/partida é de ${ax_media.toFixed(2)}`;
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIpo de Sorte</title>
+</head>
+<body>
+
+    <center>
+        <p/><br/><p/><br/>
+        <h1>Vamos ver qual seu tipo de sorte!</h1>
+    <b>Click para ver seu tipo de sorte:</b>
+    <button onclick="verificar()">Ver minha sorte</button>
+    <p/>
+    <div id="msg1"></div>
+    <div id="msg2"></div>
+    </center>
+</body>
+</html>
+<script>
+    function verificar() {
+        msg1.innerHTML = '';
+        var coracao = 0;
+        var carta = 0;
+        for (var cont = 0; cont < 21; cont++) {
+                var aleatorio = Number((Math.random()).toFixed());
+                if (aleatorio== 0) {
+                    msg1.innerHTML += `<img src="https://conteudo.imguol.com.br/c/entretenimento/99/2021/04/20/amor-relacionamento-1618945491301_v2_450x450.jpg" height="100px"> </br>`
+                    coracao++;
+                }
+                else {
+                    msg1.innerHTML += `<img src="https://s2.glbimg.com/dLHiEFov94ONVIVLP2V85FWh7hE=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/3/t/9vl0fdRyi9SvlPOe33yA/subway-surfers-mais-baixado-downloads-decada-2010-2019.jpg" height="100px">
+                    <br/>`;
+                    carta++;
+                }
+        }
+
+        if (coracao > carta) {
+            msg2.innerHTML = `<h1 style="color: red;"> <br> Você tem mais sorte no amor! <br> <h1>`
+        }
+        else {
+            msg2.innerHTML = `<h1 style="color: green;"> <br> Você tem mais sorte no jogo! <br> <h1>`
+        }
+    }
+</script>
